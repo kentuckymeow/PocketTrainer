@@ -20,12 +20,14 @@ struct JoinUsView: View {
             TextField("Repeat password", text: $viewModel.repeatPassword)
                 .textFieldStyle(CustomTextFieldStyle())
             
-            Button("Join Us") {}
+            NavigationLink(destination: ExerciseView()) {
+                Text("Join Us")
                 .frame(width: 200,height: 60)
                 .background(.black)
                 .foregroundColor(.white)
                 .cornerRadius(20)
                 .padding()
+            }
         }
     }
 }

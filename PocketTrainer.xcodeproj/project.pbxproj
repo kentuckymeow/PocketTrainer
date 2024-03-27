@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		92196FFF2BB4993F00C7FD29 /* ExerciseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92196FFE2BB4993F00C7FD29 /* ExerciseView.swift */; };
+		921970012BB49FD300C7FD29 /* CustomTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 921970002BB49FD300C7FD29 /* CustomTabBar.swift */; };
 		92E8191C2BB0C1FD0042C051 /* PocketTrainerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92E8191B2BB0C1FD0042C051 /* PocketTrainerApp.swift */; };
 		92E8191E2BB0C1FD0042C051 /* RegistrationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92E8191D2BB0C1FD0042C051 /* RegistrationView.swift */; };
 		92E819202BB0C1FF0042C051 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 92E8191F2BB0C1FF0042C051 /* Assets.xcassets */; };
@@ -20,6 +22,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		92196FFE2BB4993F00C7FD29 /* ExerciseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseView.swift; sourceTree = "<group>"; };
+		921970002BB49FD300C7FD29 /* CustomTabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabBar.swift; sourceTree = "<group>"; };
 		92E819182BB0C1FD0042C051 /* PocketTrainer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PocketTrainer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		92E8191B2BB0C1FD0042C051 /* PocketTrainerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PocketTrainerApp.swift; sourceTree = "<group>"; };
 		92E8191D2BB0C1FD0042C051 /* RegistrationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationView.swift; sourceTree = "<group>"; };
@@ -98,6 +102,7 @@
 				92E8191D2BB0C1FD0042C051 /* RegistrationView.swift */,
 				92E8192E2BB208150042C051 /* JoinUsView.swift */,
 				92E819302BB208270042C051 /* SignInView.swift */,
+				92196FFE2BB4993F00C7FD29 /* ExerciseView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -113,6 +118,7 @@
 			isa = PBXGroup;
 			children = (
 				92E819372BB20E6A0042C051 /* CustomTextFieldStyle.swift */,
+				921970002BB49FD300C7FD29 /* CustomTabBar.swift */,
 			);
 			path = Style;
 			sourceTree = "<group>";
@@ -190,8 +196,10 @@
 				92E8191E2BB0C1FD0042C051 /* RegistrationView.swift in Sources */,
 				92E819352BB20DE70042C051 /* SignInViewModel.swift in Sources */,
 				92E819382BB20E6A0042C051 /* CustomTextFieldStyle.swift in Sources */,
+				92196FFF2BB4993F00C7FD29 /* ExerciseView.swift in Sources */,
 				92E8192D2BB1FDF50042C051 /* RegistrationViewModel.swift in Sources */,
 				92E8192F2BB208150042C051 /* JoinUsView.swift in Sources */,
+				921970012BB49FD300C7FD29 /* CustomTabBar.swift in Sources */,
 				92E8191C2BB0C1FD0042C051 /* PocketTrainerApp.swift in Sources */,
 				92E819332BB208D20042C051 /* JoinUsViewModel.swift in Sources */,
 				92E819312BB208270042C051 /* SignInView.swift in Sources */,

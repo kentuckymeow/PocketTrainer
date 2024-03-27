@@ -9,7 +9,7 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        NavigationView {
+       NavigationView {
             ZStack {
                 Image("registration")
                     .aspectRatio(contentMode: .fill)
@@ -44,7 +44,7 @@ struct ContentView: View {
                 }
             }
             .padding()
-        }
+       }
     }
 }
 

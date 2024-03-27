@@ -16,12 +16,14 @@ struct SignInView: View {
             TextField("Password", text: $viewModel.password)
                 .textFieldStyle(CustomTextFieldStyle())
             
-            Button("Sign In") {}
+            NavigationLink(destination: ExerciseView()) {
+                Text("Sign In")
                 .frame(width: 200,height: 60)
                 .background(.black)
                 .foregroundColor(.white)
                 .cornerRadius(20)
                 .padding()
+            }
         }
     }
 }
