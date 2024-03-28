@@ -11,7 +11,7 @@ import SwiftUI
 struct PocketTrainerApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            RegistrationView()
         }
     }
 }

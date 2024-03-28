@@ -20,7 +20,7 @@ struct JoinUsView: View {
             TextField("Repeat password", text: $viewModel.repeatPassword)
                 .textFieldStyle(CustomTextFieldStyle())
             
-            NavigationLink(destination: ExerciseView()) {
+            NavigationLink(destination: ContentView()) {
                 Text("Join Us")
                 .frame(width: 200,height: 60)
                 .background(.black)

@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct ContentView: View {
+struct RegistrationView: View {
     var body: some View {
        NavigationView {
             ZStack {
@@ -49,5 +49,5 @@ struct ContentView: View {
 }
 
 #Preview {
-    ContentView()
+    RegistrationView()
 }

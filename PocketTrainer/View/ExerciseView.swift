@@ -8,17 +8,11 @@
 import SwiftUI
 
 struct ExerciseView: View {
+    
     var body: some View {
-        NavigationView {
-            VStack {
-                
-                Spacer()
-                
-                CustomTabBar()
-            }
-        }
-        .navigationBarBackButtonHidden(true)
+        Text("exerse")
     }
+        
 }
 
 #Preview {
