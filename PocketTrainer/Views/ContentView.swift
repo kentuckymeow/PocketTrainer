@@ -19,7 +19,7 @@ struct ContentView: View {
                     .tag(Tab.achievements)
                 GoalsView()
                     .tag(Tab.goals)
-                NutrionPlans()
+                NutrionPlansView()
                     .tag(Tab.nutrionPlan)
                 ProfileView()
                     .tag(Tab.profile)

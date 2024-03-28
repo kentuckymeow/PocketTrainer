@@ -12,10 +12,13 @@
 		923F4CFF2BB5C90A009D0DB2 /* GoalsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 923F4CFE2BB5C90A009D0DB2 /* GoalsView.swift */; };
 		923F4D012BB5D067009D0DB2 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 923F4D002BB5D067009D0DB2 /* ProfileView.swift */; };
 		923F4D032BB5D082009D0DB2 /* AchievementsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 923F4D022BB5D082009D0DB2 /* AchievementsView.swift */; };
-		923F4D052BB5D27C009D0DB2 /* NutrionPlans.swift in Sources */ = {isa = PBXBuildFile; fileRef = 923F4D042BB5D27C009D0DB2 /* NutrionPlans.swift */; };
+		923F4D052BB5D27C009D0DB2 /* NutrionPlansView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 923F4D042BB5D27C009D0DB2 /* NutrionPlansView.swift */; };
 		923F4D082BB5E41F009D0DB2 /* Tab.swift in Sources */ = {isa = PBXBuildFile; fileRef = 923F4D072BB5E41F009D0DB2 /* Tab.swift */; };
 		923F4D0A2BB5E840009D0DB2 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 923F4D092BB5E840009D0DB2 /* ContentView.swift */; };
 		923F4D0C2BB5EC09009D0DB2 /* TabButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 923F4D0B2BB5EC09009D0DB2 /* TabButtonView.swift */; };
+		923F4D0F2BB60A8B009D0DB2 /* FavouriteWorkoutsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 923F4D0E2BB60A8B009D0DB2 /* FavouriteWorkoutsView.swift */; };
+		923F4D112BB60BC1009D0DB2 /* NavigationBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 923F4D102BB60BC1009D0DB2 /* NavigationBarView.swift */; };
+		923F4D132BB60C09009D0DB2 /* WorkoutSelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 923F4D122BB60C09009D0DB2 /* WorkoutSelectionView.swift */; };
 		92E8191C2BB0C1FD0042C051 /* PocketTrainerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92E8191B2BB0C1FD0042C051 /* PocketTrainerApp.swift */; };
 		92E8191E2BB0C1FD0042C051 /* RegistrationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92E8191D2BB0C1FD0042C051 /* RegistrationView.swift */; };
 		92E819202BB0C1FF0042C051 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 92E8191F2BB0C1FF0042C051 /* Assets.xcassets */; };
@@ -34,10 +37,13 @@
 		923F4CFE2BB5C90A009D0DB2 /* GoalsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalsView.swift; sourceTree = "<group>"; };
 		923F4D002BB5D067009D0DB2 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		923F4D022BB5D082009D0DB2 /* AchievementsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AchievementsView.swift; sourceTree = "<group>"; };
-		923F4D042BB5D27C009D0DB2 /* NutrionPlans.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NutrionPlans.swift; sourceTree = "<group>"; };
+		923F4D042BB5D27C009D0DB2 /* NutrionPlansView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NutrionPlansView.swift; sourceTree = "<group>"; };
 		923F4D072BB5E41F009D0DB2 /* Tab.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tab.swift; sourceTree = "<group>"; };
 		923F4D092BB5E840009D0DB2 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		923F4D0B2BB5EC09009D0DB2 /* TabButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabButtonView.swift; sourceTree = "<group>"; };
+		923F4D0E2BB60A8B009D0DB2 /* FavouriteWorkoutsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouriteWorkoutsView.swift; sourceTree = "<group>"; };
+		923F4D102BB60BC1009D0DB2 /* NavigationBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationBarView.swift; sourceTree = "<group>"; };
+		923F4D122BB60C09009D0DB2 /* WorkoutSelectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutSelectionView.swift; sourceTree = "<group>"; };
 		92E819182BB0C1FD0042C051 /* PocketTrainer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PocketTrainer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		92E8191B2BB0C1FD0042C051 /* PocketTrainerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PocketTrainerApp.swift; sourceTree = "<group>"; };
 		92E8191D2BB0C1FD0042C051 /* RegistrationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationView.swift; sourceTree = "<group>"; };
@@ -72,6 +78,14 @@
 			path = CustomTabBar;
 			sourceTree = "<group>";
 		};
+		923F4D0D2BB60579009D0DB2 /* NavBar */ = {
+			isa = PBXGroup;
+			children = (
+				923F4D102BB60BC1009D0DB2 /* NavigationBarView.swift */,
+			);
+			path = NavBar;
+			sourceTree = "<group>";
+		};
 		92E8190F2BB0C1FD0042C051 = {
 			isa = PBXGroup;
 			children = (
@@ -91,10 +105,11 @@
 		92E8191A2BB0C1FD0042C051 /* PocketTrainer */ = {
 			isa = PBXGroup;
 			children = (
+				923F4D0D2BB60579009D0DB2 /* NavBar */,
 				923F4D062BB5E400009D0DB2 /* CustomTabBar */,
 				92E819362BB20E420042C051 /* Style */,
 				92E8192B2BB1F85A0042C051 /* Models */,
-				92E8192A2BB1F8520042C051 /* View */,
+				92E8192A2BB1F8520042C051 /* Views */,
 				92E819292BB1F8430042C051 /* ViewModels */,
 				92E8191B2BB0C1FD0042C051 /* PocketTrainerApp.swift */,
 				92E8191F2BB0C1FF0042C051 /* Assets.xcassets */,
@@ -121,7 +136,7 @@
 			path = ViewModels;
 			sourceTree = "<group>";
 		};
-		92E8192A2BB1F8520042C051 /* View */ = {
+		92E8192A2BB1F8520042C051 /* Views */ = {
 			isa = PBXGroup;
 			children = (
 				92E8191D2BB0C1FD0042C051 /* RegistrationView.swift */,
@@ -131,10 +146,12 @@
 				923F4CFE2BB5C90A009D0DB2 /* GoalsView.swift */,
 				923F4D002BB5D067009D0DB2 /* ProfileView.swift */,
 				923F4D022BB5D082009D0DB2 /* AchievementsView.swift */,
-				923F4D042BB5D27C009D0DB2 /* NutrionPlans.swift */,
+				923F4D042BB5D27C009D0DB2 /* NutrionPlansView.swift */,
 				923F4D092BB5E840009D0DB2 /* ContentView.swift */,
+				923F4D0E2BB60A8B009D0DB2 /* FavouriteWorkoutsView.swift */,
+				923F4D122BB60C09009D0DB2 /* WorkoutSelectionView.swift */,
 			);
-			path = View;
+			path = Views;
 			sourceTree = "<group>";
 		};
 		92E8192B2BB1F85A0042C051 /* Models */ = {
@@ -224,6 +241,7 @@
 			files = (
 				92E8191E2BB0C1FD0042C051 /* RegistrationView.swift in Sources */,
 				92E819352BB20DE70042C051 /* SignInViewModel.swift in Sources */,
+				923F4D0F2BB60A8B009D0DB2 /* FavouriteWorkoutsView.swift in Sources */,
 				923F4D0A2BB5E840009D0DB2 /* ContentView.swift in Sources */,
 				92E819382BB20E6A0042C051 /* CustomTextFieldStyle.swift in Sources */,
 				92196FFF2BB4993F00C7FD29 /* ExerciseView.swift in Sources */,
@@ -234,7 +252,9 @@
 				923F4CFF2BB5C90A009D0DB2 /* GoalsView.swift in Sources */,
 				923F4D032BB5D082009D0DB2 /* AchievementsView.swift in Sources */,
 				923F4D0C2BB5EC09009D0DB2 /* TabButtonView.swift in Sources */,
-				923F4D052BB5D27C009D0DB2 /* NutrionPlans.swift in Sources */,
+				923F4D132BB60C09009D0DB2 /* WorkoutSelectionView.swift in Sources */,
+				923F4D112BB60BC1009D0DB2 /* NavigationBarView.swift in Sources */,
+				923F4D052BB5D27C009D0DB2 /* NutrionPlansView.swift in Sources */,
 				92E8191C2BB0C1FD0042C051 /* PocketTrainerApp.swift in Sources */,
 				923F4D082BB5E41F009D0DB2 /* Tab.swift in Sources */,
 				92E819332BB208D20042C051 /* JoinUsViewModel.swift in Sources */,
