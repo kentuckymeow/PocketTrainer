@@ -11,11 +11,12 @@ import SwiftUI
 struct NavigationBarView: View {
     @Binding var currentTab: Int
     @Namespace var namespace
-    var navigationitems: [String] = ["Workout selection", "Favourite workouts"]
+    var navigationitems: [String]
+    var spacing: CGFloat
 
     var body: some View {
         ScrollView(.horizontal) {
-            HStack(spacing: 30){
+            HStack(spacing: spacing){
                 ForEach(Array(zip(self.navigationitems.indices, self.navigationitems)), id: \.0, content: {
                     index, name in
                     navBarItem(string: name, tab: index)
