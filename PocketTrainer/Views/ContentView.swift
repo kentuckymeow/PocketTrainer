@@ -15,7 +15,7 @@ struct ContentView: View {
             TabView(selection: $selectedTab ) {
                 ExerciseView()
                     .tag(Tab.exercise)
-                AchievementsView()
+                AchievementsView(viewModel: AchievementsViewModel())
                     .tag(Tab.achievements)
                 GoalsView()
                     .tag(Tab.goals)

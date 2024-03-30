@@ -8,11 +8,31 @@
 import SwiftUI
 
 struct AchievementsView: View {
+    @ObservedObject var viewModel: AchievementsViewModel
+    
     var body: some View {
-        Text("AchievementsView")
+        HStack(spacing:30) {
+            ForEach(0..<viewModel.achievements.count, id: \.self) { index in
+                VStack {
+                    Image(viewModel.achievements[index].imageName)
+                        .resizable()
+                        .scaledToFit()
+                        .frame(width: 50 ,height: 50)
+                        Text(viewModel.achievements[index].name)
+                            .foregroundColor(viewModel.achievements[index].isUnlocked ? .black : .gray)
+                    
+                        if viewModel.achievements[index].isUnlocked, let date = viewModel.achievements[index].dateOfCollect {
+                            Text(date, style: .date)
+                                .font(.caption)
+                                .fontWeight(.ultraLight)
+                                .foregroundColor(.primary)
+                        }
+                }
+                .padding(.bottom)
+            }
+        }
     }
 }
-
 #Preview {
-    AchievementsView()
+    AchievementsView(viewModel: AchievementsViewModel())
 }

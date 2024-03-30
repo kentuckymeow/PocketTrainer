@@ -27,6 +27,8 @@
 		9248470B2BB75409000080D6 /* PlanMealsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9248470A2BB75409000080D6 /* PlanMealsViewModel.swift */; };
 		9248470D2BB7543C000080D6 /* Meals.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9248470C2BB7543C000080D6 /* Meals.swift */; };
 		9248470F2BB755C4000080D6 /* SelectedPlanMealView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9248470E2BB755C4000080D6 /* SelectedPlanMealView.swift */; };
+		924847112BB89FD6000080D6 /* Achievement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 924847102BB89FD6000080D6 /* Achievement.swift */; };
+		924847132BB8A20B000080D6 /* AchievementsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 924847122BB8A20B000080D6 /* AchievementsViewModel.swift */; };
 		92E8191C2BB0C1FD0042C051 /* PocketTrainerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92E8191B2BB0C1FD0042C051 /* PocketTrainerApp.swift */; };
 		92E8191E2BB0C1FD0042C051 /* RegistrationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92E8191D2BB0C1FD0042C051 /* RegistrationView.swift */; };
 		92E819202BB0C1FF0042C051 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 92E8191F2BB0C1FF0042C051 /* Assets.xcassets */; };
@@ -60,6 +62,8 @@
 		9248470A2BB75409000080D6 /* PlanMealsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanMealsViewModel.swift; sourceTree = "<group>"; };
 		9248470C2BB7543C000080D6 /* Meals.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Meals.swift; sourceTree = "<group>"; };
 		9248470E2BB755C4000080D6 /* SelectedPlanMealView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectedPlanMealView.swift; sourceTree = "<group>"; };
+		924847102BB89FD6000080D6 /* Achievement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Achievement.swift; sourceTree = "<group>"; };
+		924847122BB8A20B000080D6 /* AchievementsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AchievementsViewModel.swift; sourceTree = "<group>"; };
 		92E819182BB0C1FD0042C051 /* PocketTrainer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PocketTrainer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		92E8191B2BB0C1FD0042C051 /* PocketTrainerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PocketTrainerApp.swift; sourceTree = "<group>"; };
 		92E8191D2BB0C1FD0042C051 /* RegistrationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationView.swift; sourceTree = "<group>"; };
@@ -172,6 +176,7 @@
 				92E819342BB20DE70042C051 /* SignInViewModel.swift */,
 				924847012BB749FE000080D6 /* TrainingViewModel.swift */,
 				9248470A2BB75409000080D6 /* PlanMealsViewModel.swift */,
+				924847122BB8A20B000080D6 /* AchievementsViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -197,6 +202,7 @@
 			children = (
 				924846FF2BB749B6000080D6 /* Training.swift */,
 				9248470C2BB7543C000080D6 /* Meals.swift */,
+				924847102BB89FD6000080D6 /* Achievement.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -289,6 +295,7 @@
 				924847072BB75183000080D6 /* PlanMealsView.swift in Sources */,
 				92196FFF2BB4993F00C7FD29 /* ExerciseView.swift in Sources */,
 				923F4D012BB5D067009D0DB2 /* ProfileView.swift in Sources */,
+				924847112BB89FD6000080D6 /* Achievement.swift in Sources */,
 				92E8192D2BB1FDF50042C051 /* RegistrationViewModel.swift in Sources */,
 				92E8192F2BB208150042C051 /* JoinUsView.swift in Sources */,
 				921970012BB49FD300C7FD29 /* CustomTabBar.swift in Sources */,
@@ -304,6 +311,7 @@
 				92E8191C2BB0C1FD0042C051 /* PocketTrainerApp.swift in Sources */,
 				9248470F2BB755C4000080D6 /* SelectedPlanMealView.swift in Sources */,
 				923F4D082BB5E41F009D0DB2 /* Tab.swift in Sources */,
+				924847132BB8A20B000080D6 /* AchievementsViewModel.swift in Sources */,
 				924847092BB75192000080D6 /* MealsView.swift in Sources */,
 				92E819332BB208D20042C051 /* JoinUsViewModel.swift in Sources */,
 				92E819312BB208270042C051 /* SignInView.swift in Sources */,

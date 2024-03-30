@@ -5,7 +5,6 @@
 //  Created by Arseni Khatsuk on 27.03.2024.
 //
 
-// ExerciseView.swift
 import SwiftUI
 
 struct ExerciseView: View {
