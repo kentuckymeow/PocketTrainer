@@ -13,14 +13,23 @@ struct ExerciseView: View {
     var navigationItems: [String] = ["Workout selection", "Favourite workouts"]
 
     var body: some View {
-        ZStack(alignment: .top) {
-            TabView(selection: self.$currentTab, content: {
-                WorkoutSelectionView(viewModel: TrainingViewModel()).tag(0)
-                FavouriteWorkoutsView().tag(1)
-            })
-                .tabViewStyle(.page(indexDisplayMode: .never))
-                .edgesIgnoringSafeArea(.all)
-            NavigationBarView(currentTab: $currentTab, namespace: _namespace, navigationitems: navigationItems, spacing: 30)
+        NavigationView {
+            VStack {
+                Picker("Tabs", selection: $currentTab) {
+                    ForEach(navigationItems.indices, id: \.self) { index in
+                        Text(self.navigationItems[index]).tag(index)
+                    }
+                }
+                .pickerStyle(SegmentedPickerStyle())
+                .padding(.horizontal)
+
+                switch currentTab {
+                case 0:
+                    WorkoutSelectionView(viewModel: TrainingViewModel())
+                default:
+                    FavouriteWorkoutsView()
+                }
+            }
         }
     }
 }

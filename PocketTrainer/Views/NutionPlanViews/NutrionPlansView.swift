@@ -13,14 +13,23 @@ struct NutrionPlansView: View {
     var navigationItems: [String] = ["Plan meals", "Meals"]
 
     var body: some View {
-        ZStack(alignment: .top) {
-            TabView(selection: self.$currentTab, content: {
-                PlanMealsView(viewModel: PlanMealsViewModel()).tag(0)
-                MealsView().tag(1)
-            })
-                .tabViewStyle(.page(indexDisplayMode: .never))
-                .edgesIgnoringSafeArea(.all)
-            NavigationBarView(currentTab: $currentTab, namespace: _namespace, navigationitems: navigationItems, spacing: 135)
+        NavigationView {
+            VStack {
+                Picker("Tabs", selection: $currentTab) {
+                    ForEach(navigationItems.indices, id: \.self) { index in
+                        Text(self.navigationItems[index]).tag(index)
+                    }
+                }
+                .pickerStyle(SegmentedPickerStyle())
+                .padding(.horizontal)
+
+                switch currentTab {
+                case 0:
+                    PlanMealsView(viewModel: PlanMealsViewModel())
+                default:
+                    MealsView()
+                }
+            }
         }
     }
 }
