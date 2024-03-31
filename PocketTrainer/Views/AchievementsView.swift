@@ -31,6 +31,7 @@ struct AchievementsView: View {
                 .padding(.bottom)
             }
         }
+        Spacer()
     }
 }
 #Preview {

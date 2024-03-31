@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		92196FFF2BB4993F00C7FD29 /* ExerciseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92196FFE2BB4993F00C7FD29 /* ExerciseView.swift */; };
 		921970012BB49FD300C7FD29 /* CustomTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 921970002BB49FD300C7FD29 /* CustomTabBar.swift */; };
+		922352392BB99DD2000DDA73 /* Goal .swift in Sources */ = {isa = PBXBuildFile; fileRef = 922352382BB99DD2000DDA73 /* Goal .swift */; };
+		9223523B2BB99DF7000DDA73 /* GoalsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9223523A2BB99DF7000DDA73 /* GoalsViewModel.swift */; };
 		923F4CFF2BB5C90A009D0DB2 /* GoalsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 923F4CFE2BB5C90A009D0DB2 /* GoalsView.swift */; };
 		923F4D012BB5D067009D0DB2 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 923F4D002BB5D067009D0DB2 /* ProfileView.swift */; };
 		923F4D032BB5D082009D0DB2 /* AchievementsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 923F4D022BB5D082009D0DB2 /* AchievementsView.swift */; };
@@ -43,6 +45,8 @@
 /* Begin PBXFileReference section */
 		92196FFE2BB4993F00C7FD29 /* ExerciseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseView.swift; sourceTree = "<group>"; };
 		921970002BB49FD300C7FD29 /* CustomTabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabBar.swift; sourceTree = "<group>"; };
+		922352382BB99DD2000DDA73 /* Goal .swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Goal .swift"; sourceTree = "<group>"; };
+		9223523A2BB99DF7000DDA73 /* GoalsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalsViewModel.swift; sourceTree = "<group>"; };
 		923F4CFE2BB5C90A009D0DB2 /* GoalsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalsView.swift; sourceTree = "<group>"; };
 		923F4D002BB5D067009D0DB2 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		923F4D022BB5D082009D0DB2 /* AchievementsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AchievementsView.swift; sourceTree = "<group>"; };
@@ -166,6 +170,7 @@
 				924847012BB749FE000080D6 /* TrainingViewModel.swift */,
 				9248470A2BB75409000080D6 /* PlanMealsViewModel.swift */,
 				924847122BB8A20B000080D6 /* AchievementsViewModel.swift */,
+				9223523A2BB99DF7000DDA73 /* GoalsViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -178,9 +183,9 @@
 				92E8191D2BB0C1FD0042C051 /* RegistrationView.swift */,
 				92E8192E2BB208150042C051 /* JoinUsView.swift */,
 				92E819302BB208270042C051 /* SignInView.swift */,
-				923F4CFE2BB5C90A009D0DB2 /* GoalsView.swift */,
 				923F4D002BB5D067009D0DB2 /* ProfileView.swift */,
 				923F4D022BB5D082009D0DB2 /* AchievementsView.swift */,
+				923F4CFE2BB5C90A009D0DB2 /* GoalsView.swift */,
 				923F4D092BB5E840009D0DB2 /* ContentView.swift */,
 			);
 			path = Views;
@@ -192,6 +197,7 @@
 				924846FF2BB749B6000080D6 /* Training.swift */,
 				9248470C2BB7543C000080D6 /* Meals.swift */,
 				924847102BB89FD6000080D6 /* Achievement.swift */,
+				922352382BB99DD2000DDA73 /* Goal .swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -291,8 +297,10 @@
 				923F4CFF2BB5C90A009D0DB2 /* GoalsView.swift in Sources */,
 				923F4D032BB5D082009D0DB2 /* AchievementsView.swift in Sources */,
 				923F4D0C2BB5EC09009D0DB2 /* TabButtonView.swift in Sources */,
+				9223523B2BB99DF7000DDA73 /* GoalsViewModel.swift in Sources */,
 				923F4D132BB60C09009D0DB2 /* WorkoutSelectionView.swift in Sources */,
 				9248470B2BB75409000080D6 /* PlanMealsViewModel.swift in Sources */,
+				922352392BB99DD2000DDA73 /* Goal .swift in Sources */,
 				923F4D052BB5D27C009D0DB2 /* NutrionPlansView.swift in Sources */,
 				924847002BB749B6000080D6 /* Training.swift in Sources */,
 				924847042BB74DFE000080D6 /* WorkoutView.swift in Sources */,

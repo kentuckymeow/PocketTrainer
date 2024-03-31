@@ -17,7 +17,7 @@ struct ContentView: View {
                     .tag(Tab.exercise)
                 AchievementsView(viewModel: AchievementsViewModel())
                     .tag(Tab.achievements)
-                GoalsView()
+                GoalsView(viewModel: GoalsViewModel())
                     .tag(Tab.goals)
                 NutrionPlansView()
                     .tag(Tab.nutrionPlan)
