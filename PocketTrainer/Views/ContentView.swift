@@ -2,7 +2,7 @@
 //  ContentView.swift
 //  PocketTrainer
 //
-//  Created by Arseni Khatsuk on 24.03.2024.
+//  Created by Arseni Khatsuk on 28.03.2024.
 //
 
 import SwiftUI
