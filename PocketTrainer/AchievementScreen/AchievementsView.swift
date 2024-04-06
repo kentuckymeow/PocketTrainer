@@ -11,13 +11,14 @@ struct AchievementsView: View {
     @ObservedObject var viewModel: AchievementsViewModel
     
     var body: some View {
-        HStack(spacing:30) {
-            ForEach(0..<viewModel.achievements.count, id: \.self) { index in
-                VStack {
-                    Image(viewModel.achievements[index].imageName)
-                        .resizable()
-                        .scaledToFit()
-                        .frame(width: 50 ,height: 50)
+        VStack {
+            HStack(spacing:30) {
+                ForEach(0..<viewModel.achievements.count, id: \.self) { index in
+                    VStack {
+                        Image(viewModel.achievements[index].imageName)
+                            .resizable()
+                            .scaledToFit()
+                            .frame(width: 50 ,height: 50)
                         Text(viewModel.achievements[index].name)
                             .foregroundColor(viewModel.achievements[index].isUnlocked ? .black : .gray)
                     
@@ -27,11 +28,11 @@ struct AchievementsView: View {
                                 .fontWeight(.ultraLight)
                                 .foregroundColor(.primary)
                         }
+                    }
                 }
-                .padding(.bottom)
             }
+            Spacer()
         }
-        Spacer()
     }
 }
 #Preview {
