@@ -14,8 +14,8 @@ struct PlanMealsView: View {
         NavigationView {
             ScrollView {
                 VStack(alignment: .leading) {
-                    ForEach(viewModel.meals) { meals in
-                        NavigationLink(destination: SelectedPlanMealView(meals: meals)) {
+                    ForEach(viewModel.planMeals) { meals in
+                        NavigationLink(destination: SelectedPlanMealView(planMeals: meals)) {
                             ZStack(alignment: .bottomLeading) {
                                 Image(meals.imageName)
                                     .frame(height: 120)

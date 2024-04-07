@@ -8,12 +8,12 @@
 import SwiftUI
 
 struct SelectedPlanMealView: View {
-    var meals: Meals
+    var planMeals: PlanMeals
     var body: some View {
         Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
     }
 }
 
 #Preview {
-    SelectedPlanMealView(meals: Meals(name: "Pump Up", kkal: "2300", imageName: "pumpUP"))
+    SelectedPlanMealView(planMeals: PlanMeals(name: "Pump Up", kkal: "2300", imageName: "pumpUp", meals: [Meals(name: "Orange oatmeal with fruit", kkal: "501", proteins: "9.90", fats: "19.20", carbs: "72.20"),]))
 }

@@ -21,7 +21,7 @@ struct ContentView: View {
                     .tag(Tab.goals)
                 NutrionPlansView()
                     .tag(Tab.nutrionPlan)
-                ProfileView()
+                ProfileView(healthData: HealthData())
                     .tag(Tab.profile)
                    
             }

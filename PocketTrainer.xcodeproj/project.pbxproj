@@ -30,6 +30,9 @@
 		9248470F2BB755C4000080D6 /* SelectedPlanMealView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9248470E2BB755C4000080D6 /* SelectedPlanMealView.swift */; };
 		924847112BB89FD6000080D6 /* AchievementModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 924847102BB89FD6000080D6 /* AchievementModel.swift */; };
 		924847132BB8A20B000080D6 /* AchievementsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 924847122BB8A20B000080D6 /* AchievementsViewModel.swift */; };
+		92C141A32BC2E39E00883EB4 /* SelectedExersiseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92C141A22BC2E39E00883EB4 /* SelectedExersiseView.swift */; };
+		92C141AA2BC328E000883EB4 /* video.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 92C141A82BC2F2CE00883EB4 /* video.mp4 */; };
+		92C141AC2BC3300C00883EB4 /* HealthData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92C141AB2BC3300B00883EB4 /* HealthData.swift */; };
 		92E8191C2BB0C1FD0042C051 /* PocketTrainerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92E8191B2BB0C1FD0042C051 /* PocketTrainerApp.swift */; };
 		92E8191E2BB0C1FD0042C051 /* RegistrationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92E8191D2BB0C1FD0042C051 /* RegistrationView.swift */; };
 		92E819202BB0C1FF0042C051 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 92E8191F2BB0C1FF0042C051 /* Assets.xcassets */; };
@@ -66,6 +69,9 @@
 		9248470E2BB755C4000080D6 /* SelectedPlanMealView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectedPlanMealView.swift; sourceTree = "<group>"; };
 		924847102BB89FD6000080D6 /* AchievementModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AchievementModel.swift; sourceTree = "<group>"; };
 		924847122BB8A20B000080D6 /* AchievementsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AchievementsViewModel.swift; sourceTree = "<group>"; };
+		92C141A22BC2E39E00883EB4 /* SelectedExersiseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectedExersiseView.swift; sourceTree = "<group>"; };
+		92C141A82BC2F2CE00883EB4 /* video.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = video.mp4; sourceTree = "<group>"; };
+		92C141AB2BC3300B00883EB4 /* HealthData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthData.swift; sourceTree = "<group>"; };
 		92E819182BB0C1FD0042C051 /* PocketTrainer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PocketTrainer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		92E8191B2BB0C1FD0042C051 /* PocketTrainerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PocketTrainerApp.swift; sourceTree = "<group>"; };
 		92E8191D2BB0C1FD0042C051 /* RegistrationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationView.swift; sourceTree = "<group>"; };
@@ -137,12 +143,13 @@
 			path = AchievementScreen;
 			sourceTree = "<group>";
 		};
-		920ECBFD2BC1E2300019B5B7 /* ProfileView */ = {
+		920ECBFD2BC1E2300019B5B7 /* ProfileScreen */ = {
 			isa = PBXGroup;
 			children = (
 				923F4D002BB5D067009D0DB2 /* ProfileView.swift */,
+				92C141AB2BC3300B00883EB4 /* HealthData.swift */,
 			);
-			path = ProfileView;
+			path = ProfileScreen;
 			sourceTree = "<group>";
 		};
 		920ECBFE2BC1E26C0019B5B7 /* WorkoutScreen */ = {
@@ -182,6 +189,7 @@
 				923F4D0E2BB60A8B009D0DB2 /* FavouriteWorkoutsView.swift */,
 				923F4D122BB60C09009D0DB2 /* WorkoutSelectionView.swift */,
 				924847032BB74DFE000080D6 /* WorkoutView.swift */,
+				92C141A22BC2E39E00883EB4 /* SelectedExersiseView.swift */,
 			);
 			path = ExerciseViews;
 			sourceTree = "<group>";
@@ -221,7 +229,7 @@
 				920ECBFE2BC1E26C0019B5B7 /* WorkoutScreen */,
 				920ECBFC2BC1E2130019B5B7 /* AchievementScreen */,
 				920ECBFF2BC1E29C0019B5B7 /* NutrionPlanScreen */,
-				920ECBFD2BC1E2300019B5B7 /* ProfileView */,
+				920ECBFD2BC1E2300019B5B7 /* ProfileScreen */,
 				920ECBF12BC1E1100019B5B7 /* RegistrationScreen */,
 				920ECBF42BC1E14E0019B5B7 /* JoinUsScreen */,
 				920ECBF52BC1E15F0019B5B7 /* SignInScreen */,
@@ -229,6 +237,7 @@
 				92E8191B2BB0C1FD0042C051 /* PocketTrainerApp.swift */,
 				923F4D092BB5E840009D0DB2 /* ContentView.swift */,
 				92E8191F2BB0C1FF0042C051 /* Assets.xcassets */,
+				92C141A82BC2F2CE00883EB4 /* video.mp4 */,
 				92E819212BB0C1FF0042C051 /* Preview Content */,
 			);
 			path = PocketTrainer;
@@ -309,6 +318,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				92E819232BB0C1FF0042C051 /* Preview Assets.xcassets in Resources */,
+				92C141AA2BC328E000883EB4 /* video.mp4 in Resources */,
 				92E819202BB0C1FF0042C051 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -321,6 +331,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9248470D2BB7543C000080D6 /* MealsModel.swift in Sources */,
+				92C141A32BC2E39E00883EB4 /* SelectedExersiseView.swift in Sources */,
 				924847022BB749FE000080D6 /* TrainingViewModel.swift in Sources */,
 				92E8191E2BB0C1FD0042C051 /* RegistrationView.swift in Sources */,
 				92E819352BB20DE70042C051 /* SignInViewModel.swift in Sources */,
@@ -328,6 +339,7 @@
 				923F4D0A2BB5E840009D0DB2 /* ContentView.swift in Sources */,
 				92E819382BB20E6A0042C051 /* CustomTextFieldStyle.swift in Sources */,
 				924847072BB75183000080D6 /* PlanMealsView.swift in Sources */,
+				92C141AC2BC3300C00883EB4 /* HealthData.swift in Sources */,
 				92196FFF2BB4993F00C7FD29 /* ExerciseView.swift in Sources */,
 				923F4D012BB5D067009D0DB2 /* ProfileView.swift in Sources */,
 				924847112BB89FD6000080D6 /* AchievementModel.swift in Sources */,

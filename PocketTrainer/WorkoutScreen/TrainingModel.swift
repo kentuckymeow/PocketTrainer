@@ -12,4 +12,14 @@ struct Training: Identifiable {
     var name: String
     var time: String
     var imageName: String
+    var exercises: [Exercise]
+}
+
+struct Exercise: Identifiable {
+    var id = UUID()
+    var name: String
+    var sets: String
+    var imageName: String
+    var videoUrl: String
+    var description: String
 }

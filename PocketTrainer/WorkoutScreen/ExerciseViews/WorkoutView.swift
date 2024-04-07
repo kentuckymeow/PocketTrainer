@@ -8,13 +8,42 @@
 import SwiftUI
 
 struct WorkoutView: View {
-    var training: Training
+    let training: Training
+
     var body: some View {
-        Text(training.name)
-            .navigationTitle(training.name)
+            ScrollView {
+                VStack(alignment: .leading) {
+                    ForEach(training.exercises) { exercise in
+                        NavigationLink(destination: SelectedExersiseView(exercise:  exercise)) {
+                            ZStack(alignment: .bottomLeading) {
+                                Image(exercise.imageName)
+                                    .frame(height: 120)
+                                    .cornerRadius(25)
+                                VStack(alignment:.leading) {
+                                    Text(exercise.name)
+                                        .font(.caption)
+                                        .fontWeight(.bold)
+                                        .foregroundColor(.white)
+                                    Text("\(exercise.sets)")
+                                        .font(.caption2)
+                                        .fontWeight(.bold)
+                                        .foregroundColor(.white)
+                                }
+                                .padding(.init(top: 0, leading: 15, bottom: 15, trailing: 0))
+                            }
+                            .padding(.vertical)
+                        }
+                        .buttonStyle(PlainButtonStyle())
+                    }
+                }
+                .padding()
+            }
     }
 }
 
 #Preview {
-    WorkoutView(training: Training(name: "Base Crossfit", time: "30 min", imageName: "crossfit"))
+    WorkoutView(training: Training(name: "Base Crossfit", time: "30 min", imageName: "crossfit", exercises: [
+        Exercise(name: "Bench press", sets: "4x10", imageName: "BenchPress",videoUrl: "Bench press", description:""),
+        Exercise(name: "Seated dumbbell press", sets: "4x10", imageName: "DumbbellPress",videoUrl: "", description:""),
+    ]))
 }
