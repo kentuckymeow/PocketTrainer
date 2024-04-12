@@ -11,7 +11,6 @@ struct PlanMealsView: View {
     @ObservedObject var viewModel: PlanMealsViewModel
     
     var body: some View {
-        NavigationView {
             ScrollView {
                 VStack(alignment: .leading) {
                     ForEach(viewModel.planMeals) { meals in
@@ -41,7 +40,6 @@ struct PlanMealsView: View {
                 }
                 .padding()
             }
-        }
     }
 }
 

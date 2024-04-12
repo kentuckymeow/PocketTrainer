@@ -30,6 +30,8 @@
 		9248470F2BB755C4000080D6 /* SelectedPlanMealView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9248470E2BB755C4000080D6 /* SelectedPlanMealView.swift */; };
 		924847112BB89FD6000080D6 /* AchievementModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 924847102BB89FD6000080D6 /* AchievementModel.swift */; };
 		924847132BB8A20B000080D6 /* AchievementsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 924847122BB8A20B000080D6 /* AchievementsViewModel.swift */; };
+		9258F15F2BC96F7200DAAB45 /* MealInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9258F15E2BC96F7200DAAB45 /* MealInfoView.swift */; };
+		9258F1612BC98F8800DAAB45 /* MealsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9258F1602BC98F8800DAAB45 /* MealsViewModel.swift */; };
 		92C141A32BC2E39E00883EB4 /* SelectedExersiseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92C141A22BC2E39E00883EB4 /* SelectedExersiseView.swift */; };
 		92C141AA2BC328E000883EB4 /* video.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 92C141A82BC2F2CE00883EB4 /* video.mp4 */; };
 		92C141AC2BC3300C00883EB4 /* HealthData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92C141AB2BC3300B00883EB4 /* HealthData.swift */; };
@@ -69,6 +71,8 @@
 		9248470E2BB755C4000080D6 /* SelectedPlanMealView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectedPlanMealView.swift; sourceTree = "<group>"; };
 		924847102BB89FD6000080D6 /* AchievementModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AchievementModel.swift; sourceTree = "<group>"; };
 		924847122BB8A20B000080D6 /* AchievementsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AchievementsViewModel.swift; sourceTree = "<group>"; };
+		9258F15E2BC96F7200DAAB45 /* MealInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealInfoView.swift; sourceTree = "<group>"; };
+		9258F1602BC98F8800DAAB45 /* MealsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealsViewModel.swift; sourceTree = "<group>"; };
 		92C141A22BC2E39E00883EB4 /* SelectedExersiseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectedExersiseView.swift; sourceTree = "<group>"; };
 		92C141A82BC2F2CE00883EB4 /* video.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = video.mp4; sourceTree = "<group>"; };
 		92C141AB2BC3300B00883EB4 /* HealthData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthData.swift; sourceTree = "<group>"; };
@@ -167,6 +171,7 @@
 			children = (
 				9248470C2BB7543C000080D6 /* MealsModel.swift */,
 				9248470A2BB75409000080D6 /* PlanMealsViewModel.swift */,
+				9258F1602BC98F8800DAAB45 /* MealsViewModel.swift */,
 				924847052BB7510E000080D6 /* NutionPlanViews */,
 			);
 			path = NutrionPlanScreen;
@@ -199,8 +204,9 @@
 			children = (
 				923F4D042BB5D27C009D0DB2 /* NutrionPlansView.swift */,
 				924847062BB75183000080D6 /* PlanMealsView.swift */,
-				924847082BB75192000080D6 /* MealsView.swift */,
 				9248470E2BB755C4000080D6 /* SelectedPlanMealView.swift */,
+				924847082BB75192000080D6 /* MealsView.swift */,
+				9258F15E2BC96F7200DAAB45 /* MealInfoView.swift */,
 			);
 			path = NutionPlanViews;
 			sourceTree = "<group>";
@@ -340,8 +346,10 @@
 				92E819382BB20E6A0042C051 /* CustomTextFieldStyle.swift in Sources */,
 				924847072BB75183000080D6 /* PlanMealsView.swift in Sources */,
 				92C141AC2BC3300C00883EB4 /* HealthData.swift in Sources */,
+				9258F15F2BC96F7200DAAB45 /* MealInfoView.swift in Sources */,
 				92196FFF2BB4993F00C7FD29 /* ExerciseView.swift in Sources */,
 				923F4D012BB5D067009D0DB2 /* ProfileView.swift in Sources */,
+				9258F1612BC98F8800DAAB45 /* MealsViewModel.swift in Sources */,
 				924847112BB89FD6000080D6 /* AchievementModel.swift in Sources */,
 				92E8192D2BB1FDF50042C051 /* RegistrationViewModel.swift in Sources */,
 				92E8192F2BB208150042C051 /* JoinUsView.swift in Sources */,

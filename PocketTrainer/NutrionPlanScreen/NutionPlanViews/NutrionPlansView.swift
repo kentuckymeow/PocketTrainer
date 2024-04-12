@@ -9,7 +9,6 @@ import SwiftUI
 
 struct NutrionPlansView: View {
     @State var currentTab: Int = 0
-    @Namespace var namespace
     var navigationItems: [String] = ["Plan meals", "Meals"]
 
     var body: some View {
@@ -27,7 +26,7 @@ struct NutrionPlansView: View {
                 case 0:
                     PlanMealsView(viewModel: PlanMealsViewModel())
                 default:
-                    MealsView()
+                    MealsView(viewModel: MealsViewModel())
                 }
             }
         }

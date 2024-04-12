@@ -11,7 +11,6 @@ struct WorkoutSelectionView: View {
     @ObservedObject var viewModel: TrainingViewModel
     
     var body: some View {
-        NavigationView {
             ScrollView {
                 VStack(alignment: .leading) {
                     ForEach(viewModel.trainings) { training in
@@ -41,7 +40,6 @@ struct WorkoutSelectionView: View {
                 }
                 .padding()
             }
-        }
     }
 }
 

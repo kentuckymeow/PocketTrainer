@@ -18,9 +18,11 @@ struct PlanMeals: Identifiable {
 struct Meals: Identifiable {
     var id = UUID()
     var name: String
+    var imageName: String
     var kkal: String
     var proteins: String
     var fats: String
     var carbs: String
+    var recipe: String
 }
 
