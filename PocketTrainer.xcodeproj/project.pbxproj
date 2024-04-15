@@ -191,8 +191,8 @@
 			isa = PBXGroup;
 			children = (
 				92196FFE2BB4993F00C7FD29 /* ExerciseView.swift */,
-				923F4D0E2BB60A8B009D0DB2 /* FavouriteWorkoutsView.swift */,
 				923F4D122BB60C09009D0DB2 /* WorkoutSelectionView.swift */,
+				923F4D0E2BB60A8B009D0DB2 /* FavouriteWorkoutsView.swift */,
 				924847032BB74DFE000080D6 /* WorkoutView.swift */,
 				92C141A22BC2E39E00883EB4 /* SelectedExersiseView.swift */,
 			);

@@ -28,4 +28,20 @@ class TrainingViewModel: ObservableObject {
             Exercise(name: "Dumbbell row", sets: "4x10", imageName: "DumbbellRow",videoUrl: "", description: ""),
         ]),
     ]
+    
+    @Published var favouriteWorkouts: [Training] = [] // Добавляем список избранных тренировок
+
+       // Метод для добавления тренировки в список избранных
+       func addFavouriteWorkout(_ workout: Training) {
+           if !favouriteWorkouts.contains(where: { $0.id == workout.id }) {
+               favouriteWorkouts.append(workout)
+           }
+       }
+
+       // Метод для удаления тренировки из списка избранных
+       func removeFavouriteWorkout(_ workout: Training) {
+           if let index = favouriteWorkouts.firstIndex(where: { $0.id == workout.id }) {
+               favouriteWorkouts.remove(at: index)
+           }
+       }
 }

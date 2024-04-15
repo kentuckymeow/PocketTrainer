@@ -8,11 +8,39 @@
 import SwiftUI
 
 struct FavouriteWorkoutsView: View {
+    @ObservedObject var viewModel: TrainingViewModel
+
     var body: some View {
-        Text("Favourite workouts")
+        ScrollView {
+            VStack(alignment: .leading) {
+                ForEach(viewModel.favouriteWorkouts) { workout in
+                    NavigationLink(destination: WorkoutView(training: workout)) {
+                    ZStack(alignment: .bottomLeading) {
+                        Image(workout.imageName)
+                            .frame(height: 120)
+                            .cornerRadius(25)
+                        VStack(alignment:.leading) {
+                            Text(workout.name)
+                                .font(.caption)
+                                .fontWeight(.bold)
+                                .foregroundColor(.white)
+                            Text("Duration: \(workout.time)")
+                                .font(.caption2)
+                                .fontWeight(.bold)
+                                .foregroundColor(.white)
+                        }
+                        .padding(.init(top: 0, leading: 15, bottom: 15, trailing: 0))
+                    }
+                    .padding(.vertical)
+                }
+                }
+            }
+            .padding()
+        }
     }
 }
 
+
 #Preview {
-    FavouriteWorkoutsView()
+    FavouriteWorkoutsView(viewModel: TrainingViewModel())
 }

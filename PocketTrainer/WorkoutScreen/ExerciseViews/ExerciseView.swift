@@ -11,6 +11,9 @@ struct ExerciseView: View {
     @State var currentTab: Int = 0
     @Namespace var namespace
     var navigationItems: [String] = ["Workout selection", "Favourite workouts"]
+    
+    // Создаем один экземпляр TrainingViewModel
+    @StateObject var viewModel = TrainingViewModel()
 
     var body: some View {
         NavigationView {
@@ -25,14 +28,17 @@ struct ExerciseView: View {
 
                 switch currentTab {
                 case 0:
-                    WorkoutSelectionView(viewModel: TrainingViewModel())
+                    // Передаем viewModel в WorkoutSelectionView
+                    WorkoutSelectionView(viewModel: viewModel)
                 default:
-                    FavouriteWorkoutsView()
+                    // Передаем viewModel в FavouriteWorkoutsView
+                    FavouriteWorkoutsView(viewModel: viewModel)
                 }
             }
         }
     }
 }
+
 
 
 #Preview {
