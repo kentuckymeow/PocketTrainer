@@ -16,7 +16,7 @@ struct SignInView: View {
             TextField("Password", text: $viewModel.password)
                 .textFieldStyle(CustomTextFieldStyle())
             
-            NavigationLink(destination: ExerciseView()) {
+            NavigationLink(destination: ContentView()) {
                 Text("Sign In")
                 .frame(width: 200,height: 60)
                 .background(.black)
