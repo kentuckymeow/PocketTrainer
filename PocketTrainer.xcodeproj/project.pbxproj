@@ -44,6 +44,9 @@
 		92C141A32BC2E39E00883EB4 /* SelectedExersiseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92C141A22BC2E39E00883EB4 /* SelectedExersiseView.swift */; };
 		92C141AA2BC328E000883EB4 /* video.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 92C141A82BC2F2CE00883EB4 /* video.mp4 */; };
 		92C141AC2BC3300C00883EB4 /* HealthData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92C141AB2BC3300B00883EB4 /* HealthData.swift */; };
+		92DA1ABA2BD50BDE00FA0732 /* AlertManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92DA1AB92BD50BDE00FA0732 /* AlertManager.swift */; };
+		92DA1ABC2BD50DC500FA0732 /* Validator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92DA1ABB2BD50DC500FA0732 /* Validator.swift */; };
+		92DA1ABE2BD68D0900FA0732 /* AuthManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92DA1ABD2BD68D0900FA0732 /* AuthManager.swift */; };
 		92E8191C2BB0C1FD0042C051 /* PocketTrainerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92E8191B2BB0C1FD0042C051 /* PocketTrainerApp.swift */; };
 		92E8191E2BB0C1FD0042C051 /* RegistrationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92E8191D2BB0C1FD0042C051 /* RegistrationView.swift */; };
 		92E819202BB0C1FF0042C051 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 92E8191F2BB0C1FF0042C051 /* Assets.xcassets */; };
@@ -94,6 +97,9 @@
 		92C141A22BC2E39E00883EB4 /* SelectedExersiseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectedExersiseView.swift; sourceTree = "<group>"; };
 		92C141A82BC2F2CE00883EB4 /* video.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = video.mp4; sourceTree = "<group>"; };
 		92C141AB2BC3300B00883EB4 /* HealthData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthData.swift; sourceTree = "<group>"; };
+		92DA1AB92BD50BDE00FA0732 /* AlertManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertManager.swift; sourceTree = "<group>"; };
+		92DA1ABB2BD50DC500FA0732 /* Validator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Validator.swift; sourceTree = "<group>"; };
+		92DA1ABD2BD68D0900FA0732 /* AuthManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthManager.swift; sourceTree = "<group>"; };
 		92E819182BB0C1FD0042C051 /* PocketTrainer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PocketTrainer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		92E8191B2BB0C1FD0042C051 /* PocketTrainerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PocketTrainerApp.swift; sourceTree = "<group>"; };
 		92E8191D2BB0C1FD0042C051 /* RegistrationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationView.swift; sourceTree = "<group>"; };
@@ -235,6 +241,7 @@
 			isa = PBXGroup;
 			children = (
 				92534CFA2BD42BAB00C73E07 /* AuthService.swift */,
+				92DA1ABD2BD68D0900FA0732 /* AuthManager.swift */,
 				92534CFC2BD42BC600C73E07 /* DataService.swift */,
 				92534CFE2BD42BDE00C73E07 /* Endpoints.swift */,
 				92534D002BD42C0500C73E07 /* HTTP.swift */,
@@ -264,6 +271,8 @@
 		92E8191A2BB0C1FD0042C051 /* PocketTrainer */ = {
 			isa = PBXGroup;
 			children = (
+				92DA1AB92BD50BDE00FA0732 /* AlertManager.swift */,
+				92DA1ABB2BD50DC500FA0732 /* Validator.swift */,
 				92534CDB2BD3F48D00C73E07 /* NetworkLayer */,
 				92E819362BB20E420042C051 /* Style */,
 				923F4D062BB5E400009D0DB2 /* CustomTabBar */,
@@ -388,6 +397,7 @@
 				923F4D012BB5D067009D0DB2 /* ProfileView.swift in Sources */,
 				9258F1612BC98F8800DAAB45 /* MealsViewModel.swift in Sources */,
 				92534D072BD42C8A00C73E07 /* RegisterUserModel.swift in Sources */,
+				92DA1ABA2BD50BDE00FA0732 /* AlertManager.swift in Sources */,
 				924847112BB89FD6000080D6 /* AchievementModel.swift in Sources */,
 				92E8192D2BB1FDF50042C051 /* RegistrationViewModel.swift in Sources */,
 				92E8192F2BB208150042C051 /* JoinUsView.swift in Sources */,
@@ -398,6 +408,7 @@
 				923F4D032BB5D082009D0DB2 /* AchievementsView.swift in Sources */,
 				92534D032BD42C2700C73E07 /* ServerResponce.swift in Sources */,
 				923F4D0C2BB5EC09009D0DB2 /* TabButtonView.swift in Sources */,
+				92DA1ABC2BD50DC500FA0732 /* Validator.swift in Sources */,
 				9223523B2BB99DF7000DDA73 /* GoalsViewModel.swift in Sources */,
 				923F4D132BB60C09009D0DB2 /* WorkoutSelectionView.swift in Sources */,
 				9248470B2BB75409000080D6 /* PlanMealsViewModel.swift in Sources */,
@@ -410,6 +421,7 @@
 				92E8191C2BB0C1FD0042C051 /* PocketTrainerApp.swift in Sources */,
 				92534CFB2BD42BAB00C73E07 /* AuthService.swift in Sources */,
 				9248470F2BB755C4000080D6 /* SelectedPlanMealView.swift in Sources */,
+				92DA1ABE2BD68D0900FA0732 /* AuthManager.swift in Sources */,
 				923F4D082BB5E41F009D0DB2 /* Tab.swift in Sources */,
 				924847132BB8A20B000080D6 /* AchievementsViewModel.swift in Sources */,
 				924847092BB75192000080D6 /* MealsView.swift in Sources */,

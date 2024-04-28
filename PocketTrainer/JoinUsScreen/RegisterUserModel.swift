@@ -9,6 +9,6 @@ import Foundation
 
 struct RegisterUserModel: Codable {
     let email: String
-    let username: String
+   // let username: String
     let password: String
 }

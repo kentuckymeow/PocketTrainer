@@ -9,8 +9,8 @@ import Foundation
 
 enum Endpoint {
     
-    case createAccount(path: String = "/auth/create-account", userRequest: RegisterUserModel)
-    case signIn(path: String = "/auth/sign-in", userRequest: SignInUserModel)
+    case createAccount(path: String = "/auth/register", userRequest: RegisterUserModel)
+    case signIn(path: String = "/auth/login", userRequest: SignInUserModel)
     case forgotPassword(path: String = "/auth/forgot-password", email: String)
     
     case getData(path: String = "/data/get-data")

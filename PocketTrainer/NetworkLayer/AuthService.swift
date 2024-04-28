@@ -15,34 +15,39 @@ enum ServiceError: Error {
 
 class AuthService {
     
-    static func fetch(request: URLRequest, completion: @escaping (Result<String, Error>) -> Void) {
+    static func fetch(request: URLRequest, completion: @escaping (Result<Data, Error>) -> Void) {
         
-        URLSession.shared.dataTask(with: request) { data, _, error in
-            guard let data = data else {
+        URLSession.shared.dataTask(with: request) { data, response, error in
+            guard let httpResponse = response as? HTTPURLResponse else {
+                completion(.failure(ServiceError.unkown()))
+                return
+            }
+            
+            switch httpResponse.statusCode {
+            case 200...299:
+                // Success
+                if let data = data {
+                    completion(.success(data))
+                } else {
+                    completion(.failure(ServiceError.decodingError()))
+                }
+                
+            case 400...499:
+                // Client errors
                 if let error = error {
                     completion(.failure(ServiceError.serverError(error.localizedDescription)))
                 } else {
-                    completion(.failure(ServiceError.unkown()))
+                    completion(.failure(ServiceError.decodingError()))
                 }
-                return
-            }
-            
-            let decoder = JSONDecoder()
-            
-            if let successMessage =  try? decoder.decode(SucessResponse.self, from: data) {
-                completion(.success(successMessage.success))
-                return
-            }
-            else if let errorMessage = try? decoder.decode(ErrorResponse.self, from: data) {
-                completion(.failure(ServiceError.serverError(errorMessage.error)))
-                return
-            }
-            else {
-                completion(.failure(ServiceError.decodingError()))
-                return
+                
+            default:
+                // Other errors
+                completion(.failure(ServiceError.unkown()))
             }
         }.resume()
     }
+
+
     
     // MARK: - Sign Out
     static func signOut() {
