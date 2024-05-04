@@ -41,12 +41,12 @@
 		92534D0A2BD42D8800C73E07 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92534D092BD42D8800C73E07 /* Constants.swift */; };
 		9258F15F2BC96F7200DAAB45 /* MealInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9258F15E2BC96F7200DAAB45 /* MealInfoView.swift */; };
 		9258F1612BC98F8800DAAB45 /* MealsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9258F1602BC98F8800DAAB45 /* MealsViewModel.swift */; };
+		9276B9D22BE6D12900953FC0 /* ProfilePopUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9276B9D12BE6D12900953FC0 /* ProfilePopUpView.swift */; };
 		92C141A32BC2E39E00883EB4 /* SelectedExersiseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92C141A22BC2E39E00883EB4 /* SelectedExersiseView.swift */; };
 		92C141AA2BC328E000883EB4 /* video.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 92C141A82BC2F2CE00883EB4 /* video.mp4 */; };
-		92C141AC2BC3300C00883EB4 /* HealthData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92C141AB2BC3300B00883EB4 /* HealthData.swift */; };
+		92C141AC2BC3300C00883EB4 /* HealthDataViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92C141AB2BC3300B00883EB4 /* HealthDataViewModel.swift */; };
 		92DA1ABA2BD50BDE00FA0732 /* AlertManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92DA1AB92BD50BDE00FA0732 /* AlertManager.swift */; };
 		92DA1ABC2BD50DC500FA0732 /* Validator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92DA1ABB2BD50DC500FA0732 /* Validator.swift */; };
-		92DA1ABE2BD68D0900FA0732 /* AuthManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92DA1ABD2BD68D0900FA0732 /* AuthManager.swift */; };
 		92E8191C2BB0C1FD0042C051 /* PocketTrainerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92E8191B2BB0C1FD0042C051 /* PocketTrainerApp.swift */; };
 		92E8191E2BB0C1FD0042C051 /* RegistrationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92E8191D2BB0C1FD0042C051 /* RegistrationView.swift */; };
 		92E819202BB0C1FF0042C051 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 92E8191F2BB0C1FF0042C051 /* Assets.xcassets */; };
@@ -57,6 +57,7 @@
 		92E819332BB208D20042C051 /* JoinUsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92E819322BB208D20042C051 /* JoinUsViewModel.swift */; };
 		92E819352BB20DE70042C051 /* SignInViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92E819342BB20DE70042C051 /* SignInViewModel.swift */; };
 		92E819382BB20E6A0042C051 /* CustomTextFieldStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92E819372BB20E6A0042C051 /* CustomTextFieldStyle.swift */; };
+		92F128F22BDED6460019DD60 /* HealthsDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92F128F12BDED6460019DD60 /* HealthsDataModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -94,12 +95,12 @@
 		92534D092BD42D8800C73E07 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		9258F15E2BC96F7200DAAB45 /* MealInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealInfoView.swift; sourceTree = "<group>"; };
 		9258F1602BC98F8800DAAB45 /* MealsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealsViewModel.swift; sourceTree = "<group>"; };
+		9276B9D12BE6D12900953FC0 /* ProfilePopUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilePopUpView.swift; sourceTree = "<group>"; };
 		92C141A22BC2E39E00883EB4 /* SelectedExersiseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectedExersiseView.swift; sourceTree = "<group>"; };
 		92C141A82BC2F2CE00883EB4 /* video.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = video.mp4; sourceTree = "<group>"; };
-		92C141AB2BC3300B00883EB4 /* HealthData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthData.swift; sourceTree = "<group>"; };
+		92C141AB2BC3300B00883EB4 /* HealthDataViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthDataViewModel.swift; sourceTree = "<group>"; };
 		92DA1AB92BD50BDE00FA0732 /* AlertManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertManager.swift; sourceTree = "<group>"; };
 		92DA1ABB2BD50DC500FA0732 /* Validator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Validator.swift; sourceTree = "<group>"; };
-		92DA1ABD2BD68D0900FA0732 /* AuthManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthManager.swift; sourceTree = "<group>"; };
 		92E819182BB0C1FD0042C051 /* PocketTrainer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PocketTrainer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		92E8191B2BB0C1FD0042C051 /* PocketTrainerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PocketTrainerApp.swift; sourceTree = "<group>"; };
 		92E8191D2BB0C1FD0042C051 /* RegistrationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationView.swift; sourceTree = "<group>"; };
@@ -111,6 +112,8 @@
 		92E819322BB208D20042C051 /* JoinUsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JoinUsViewModel.swift; sourceTree = "<group>"; };
 		92E819342BB20DE70042C051 /* SignInViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewModel.swift; sourceTree = "<group>"; };
 		92E819372BB20E6A0042C051 /* CustomTextFieldStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextFieldStyle.swift; sourceTree = "<group>"; };
+		92EED3DF2BE2BABA00240A62 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		92F128F12BDED6460019DD60 /* HealthsDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthsDataModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -177,7 +180,8 @@
 			isa = PBXGroup;
 			children = (
 				923F4D002BB5D067009D0DB2 /* ProfileView.swift */,
-				92C141AB2BC3300B00883EB4 /* HealthData.swift */,
+				92C141AB2BC3300B00883EB4 /* HealthDataViewModel.swift */,
+				92F128F12BDED6460019DD60 /* HealthsDataModel.swift */,
 			);
 			path = ProfileScreen;
 			sourceTree = "<group>";
@@ -241,7 +245,6 @@
 			isa = PBXGroup;
 			children = (
 				92534CFA2BD42BAB00C73E07 /* AuthService.swift */,
-				92DA1ABD2BD68D0900FA0732 /* AuthManager.swift */,
 				92534CFC2BD42BC600C73E07 /* DataService.swift */,
 				92534CFE2BD42BDE00C73E07 /* Endpoints.swift */,
 				92534D002BD42C0500C73E07 /* HTTP.swift */,
@@ -250,6 +253,14 @@
 				92534D092BD42D8800C73E07 /* Constants.swift */,
 			);
 			path = NetworkLayer;
+			sourceTree = "<group>";
+		};
+		9276B9D02BE6D0FE00953FC0 /* ProfilePopUpView */ = {
+			isa = PBXGroup;
+			children = (
+				9276B9D12BE6D12900953FC0 /* ProfilePopUpView.swift */,
+			);
+			path = ProfilePopUpView;
 			sourceTree = "<group>";
 		};
 		92E8190F2BB0C1FD0042C051 = {
@@ -271,6 +282,7 @@
 		92E8191A2BB0C1FD0042C051 /* PocketTrainer */ = {
 			isa = PBXGroup;
 			children = (
+				92EED3DF2BE2BABA00240A62 /* Info.plist */,
 				92DA1AB92BD50BDE00FA0732 /* AlertManager.swift */,
 				92DA1ABB2BD50DC500FA0732 /* Validator.swift */,
 				92534CDB2BD3F48D00C73E07 /* NetworkLayer */,
@@ -280,6 +292,7 @@
 				920ECBFC2BC1E2130019B5B7 /* AchievementScreen */,
 				920ECBFF2BC1E29C0019B5B7 /* NutrionPlanScreen */,
 				920ECBFD2BC1E2300019B5B7 /* ProfileScreen */,
+				9276B9D02BE6D0FE00953FC0 /* ProfilePopUpView */,
 				920ECBF12BC1E1100019B5B7 /* RegistrationScreen */,
 				920ECBF42BC1E14E0019B5B7 /* JoinUsScreen */,
 				920ECBF52BC1E15F0019B5B7 /* SignInScreen */,
@@ -385,13 +398,14 @@
 				924847022BB749FE000080D6 /* TrainingViewModel.swift in Sources */,
 				92E8191E2BB0C1FD0042C051 /* RegistrationView.swift in Sources */,
 				92E819352BB20DE70042C051 /* SignInViewModel.swift in Sources */,
+				92F128F22BDED6460019DD60 /* HealthsDataModel.swift in Sources */,
 				92534D012BD42C0500C73E07 /* HTTP.swift in Sources */,
 				92534CF72BD41EA000C73E07 /* SignInModel.swift in Sources */,
 				923F4D0F2BB60A8B009D0DB2 /* FavouriteWorkoutsView.swift in Sources */,
 				923F4D0A2BB5E840009D0DB2 /* ContentView.swift in Sources */,
 				92E819382BB20E6A0042C051 /* CustomTextFieldStyle.swift in Sources */,
 				924847072BB75183000080D6 /* PlanMealsView.swift in Sources */,
-				92C141AC2BC3300C00883EB4 /* HealthData.swift in Sources */,
+				92C141AC2BC3300C00883EB4 /* HealthDataViewModel.swift in Sources */,
 				9258F15F2BC96F7200DAAB45 /* MealInfoView.swift in Sources */,
 				92196FFF2BB4993F00C7FD29 /* ExerciseView.swift in Sources */,
 				923F4D012BB5D067009D0DB2 /* ProfileView.swift in Sources */,
@@ -412,6 +426,7 @@
 				9223523B2BB99DF7000DDA73 /* GoalsViewModel.swift in Sources */,
 				923F4D132BB60C09009D0DB2 /* WorkoutSelectionView.swift in Sources */,
 				9248470B2BB75409000080D6 /* PlanMealsViewModel.swift in Sources */,
+				9276B9D22BE6D12900953FC0 /* ProfilePopUpView.swift in Sources */,
 				92534CFD2BD42BC600C73E07 /* DataService.swift in Sources */,
 				922352392BB99DD2000DDA73 /* GoalModel .swift in Sources */,
 				923F4D052BB5D27C009D0DB2 /* NutrionPlansView.swift in Sources */,
@@ -421,7 +436,6 @@
 				92E8191C2BB0C1FD0042C051 /* PocketTrainerApp.swift in Sources */,
 				92534CFB2BD42BAB00C73E07 /* AuthService.swift in Sources */,
 				9248470F2BB755C4000080D6 /* SelectedPlanMealView.swift in Sources */,
-				92DA1ABE2BD68D0900FA0732 /* AuthManager.swift in Sources */,
 				923F4D082BB5E41F009D0DB2 /* Tab.swift in Sources */,
 				924847132BB8A20B000080D6 /* AchievementsViewModel.swift in Sources */,
 				924847092BB75192000080D6 /* MealsView.swift in Sources */,
@@ -563,6 +577,7 @@
 				DEVELOPMENT_TEAM = U64PC6F3M5;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = PocketTrainer/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -592,6 +607,7 @@
 				DEVELOPMENT_TEAM = U64PC6F3M5;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = PocketTrainer/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;

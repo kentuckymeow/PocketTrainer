@@ -12,6 +12,9 @@ enum Endpoint {
     case createAccount(path: String = "/auth/register", userRequest: RegisterUserModel)
     case signIn(path: String = "/auth/login", userRequest: SignInUserModel)
     case forgotPassword(path: String = "/auth/forgot-password", email: String)
+    case healthData(path: String = "/users/health-data", userRequest: HealthDataModel)
+    case healthDataUpdate(path: String = "/users/update-data", userRequest: HealthDataModel)
+    
     
     case getData(path: String = "/data/get-data")
     
@@ -38,6 +41,8 @@ enum Endpoint {
         case .createAccount(let path, _),
                 .signIn(let path, _),
                 .forgotPassword(let path, _),
+                .healthData(let path, _),
+                .healthDataUpdate(let path, _),
                 .getData(let path):
             return path
         }
@@ -47,10 +52,14 @@ enum Endpoint {
             switch self {
             case .createAccount,
                     .signIn,
-                    .forgotPassword:
+                    .forgotPassword,
+                    .healthData:
                 return HTTP.Method.post.rawValue
+            case .healthDataUpdate:
+                return HTTP.Method.pacth.rawValue
             case .getData:
                 return HTTP.Method.get.rawValue
+            
             }
         }
         
@@ -65,8 +74,40 @@ enum Endpoint {
             case .forgotPassword(_, let email):
                 return try? JSONSerialization.data(withJSONObject: ["email": email], options: [])
                 
+            case .healthData(_, let userRequest):
+                let formatter = ISO8601DateFormatter()
+                formatter.formatOptions = [.withInternetDateTime, .withFractionalSeconds]
+
+                let encoder = JSONEncoder()
+                encoder.dateEncodingStrategy = .custom { (date, encoder) in
+                    let dateString = formatter.string(from: date)
+                    var container = encoder.singleValueContainer()
+                    try container.encode(dateString)
+                }
+
+                let data = try? encoder.encode(userRequest)
+                print("health data: \(String(data: data ?? Data(), encoding: .utf8) ?? "nil")")
+                return try? encoder.encode(userRequest)
+                
+            case .healthDataUpdate(_, let userRequest):
+                let formatter = ISO8601DateFormatter()
+                formatter.formatOptions = [.withInternetDateTime, .withFractionalSeconds]
+
+                let encoder = JSONEncoder()
+                encoder.dateEncodingStrategy = .custom { (date, encoder) in
+                    let dateString = formatter.string(from: date)
+                    var container = encoder.singleValueContainer()
+                    try container.encode(dateString)
+                }
+
+                let data = try? encoder.encode(userRequest)
+                print("health data update: \(String(data: data ?? Data(), encoding: .utf8) ?? "nil")")
+                return try? encoder.encode(userRequest)
+                return try? JSONEncoder().encode(userRequest)
+                
             case .getData:
                 return nil
+            
             }
         }
         
@@ -79,8 +120,11 @@ enum Endpoint {
             case .createAccount,
                     .signIn,
                     .forgotPassword,
+                    .healthData,
+                    .healthDataUpdate,
                     .getData:
                 self.setValue(HTTP.Headers.Value.applicationJson.rawValue, forHTTPHeaderField: HTTP.Headers.Key.contentType.rawValue)
+           
             }
         }
     }

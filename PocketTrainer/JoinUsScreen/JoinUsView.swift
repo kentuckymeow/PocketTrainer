@@ -23,7 +23,7 @@ struct JoinUsView: View {
             TextField("Repeat password", text: $viewModel.repeatPassword)
                 .textFieldStyle(CustomTextFieldStyle())
             
-            NavigationLink(destination: ContentView(), isActive: $isActive) {
+            NavigationLink(destination: ContentView(viewModel: HealthDataViewModel()), isActive: $isActive) {
                 Button {
                     didTapSignUp()
                 } label: {

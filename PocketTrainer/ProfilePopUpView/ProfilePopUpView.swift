@@ -1,14 +1,15 @@
 //
-//  ProfileView.swift
+//  ProfilePopUpView.swift
 //  PocketTrainer
 //
-//  Created by Arseni Khatsuk on 28.03.2024.
+//  Created by Arseni Khatsuk on 04.05.2024.
 //
 
 import SwiftUI
 
-struct ProfileView: View {
+struct ProfilePopUpView: View {
     @ObservedObject var viewModel: HealthDataViewModel
+    @Binding var isProfilePopUpViewShown: Bool
 
     var body: some View {
         VStack {
@@ -38,8 +39,8 @@ struct ProfileView: View {
                 }
             }
             
-            Button(action: updateHealthData) {
-                Text("Update Health Data")
+            Button(action: saveHealthData) {
+                Text("Save Health Data")
             }
             .frame(maxWidth: .infinity)
         }
@@ -48,7 +49,7 @@ struct ProfileView: View {
     
     
         
-    func updateHealthData() {
+    func saveHealthData() {
         let userRequest = HealthDataModel(
             gender: viewModel.gender,
             weight: viewModel.weight,
@@ -58,14 +59,15 @@ struct ProfileView: View {
             fitnessLevel: viewModel.fitnessLevel
         )
         
-        guard let request = Endpoint.healthDataUpdate(userRequest: userRequest).request else { return }
+        guard let request = Endpoint.healthData(userRequest: userRequest).request else { return }
         
         AuthService.fetch(request: request) { result in
             DispatchQueue.main.async {
                 switch result {
                 case .success(_):
                     // Handle success, update UI, etc.
-                    print("Health data updated successfully.")
+                    print("Health data saved successfully.")
+                    self.isProfilePopUpViewShown = false
                     
                 case .failure(let error):
                     guard let error = error as? ServiceError else { return }
@@ -75,15 +77,16 @@ struct ProfileView: View {
                             .unkown(let string),
                             .decodingError(let string):
                         // Show an alert with the error message
-                        print("Failed to update health data: \(string)")
+                        print("Failed to save health data: \(string)")
+                        self.isProfilePopUpViewShown = false
                     }
                 }
             }
         }
     }
-
 }
 
+
 #Preview {
-    ProfileView(viewModel: HealthDataViewModel())
+    ProfilePopUpView(viewModel: HealthDataViewModel(), isProfilePopUpViewShown: .constant(false))
 }

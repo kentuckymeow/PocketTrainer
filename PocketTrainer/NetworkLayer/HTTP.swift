@@ -12,6 +12,7 @@ enum HTTP {
     enum Method: String {
         case get = "GET"
         case post = "POST"
+        case pacth = "PATCH"
     }
     
     enum Headers {

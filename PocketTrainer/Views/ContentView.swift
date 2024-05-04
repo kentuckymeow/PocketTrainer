@@ -9,6 +9,8 @@ import SwiftUI
 
 struct ContentView: View {
     @State var selectedTab: Tab = .exercise
+    @State var isProfilePopUpViewShown: Bool = true
+    @ObservedObject var viewModel: HealthDataViewModel
     
     var body: some View {
         ZStack(alignment: .bottom) {
@@ -21,11 +23,17 @@ struct ContentView: View {
                     .tag(Tab.goals)
                 NutrionPlansView()
                     .tag(Tab.nutrionPlan)
-                ProfileView(healthData: HealthData())
+                ProfileView(viewModel: HealthDataViewModel())
                     .tag(Tab.profile)
                    
             }
             CustomTabBar(selectedTab: $selectedTab)
+            
+           
+        }
+        
+        .sheet(isPresented: $isProfilePopUpViewShown) {
+            ProfilePopUpView(viewModel: viewModel, isProfilePopUpViewShown: $isProfilePopUpViewShown)
         }
         .navigationBarBackButtonHidden(true)
     }
@@ -33,5 +41,5 @@ struct ContentView: View {
 }
 
 #Preview {
-    ContentView()
+    ContentView(viewModel: HealthDataViewModel())
 }

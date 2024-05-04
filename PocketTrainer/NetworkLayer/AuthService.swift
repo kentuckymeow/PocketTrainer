@@ -16,38 +16,60 @@ enum ServiceError: Error {
 class AuthService {
     
     static func fetch(request: URLRequest, completion: @escaping (Result<Data, Error>) -> Void) {
-        
-        URLSession.shared.dataTask(with: request) { data, response, error in
-            guard let httpResponse = response as? HTTPURLResponse else {
-                completion(.failure(ServiceError.unkown()))
-                return
-            }
             
-            switch httpResponse.statusCode {
-            case 200...299:
-                // Success
-                if let data = data {
-                    completion(.success(data))
-                } else {
-                    completion(.failure(ServiceError.decodingError()))
+            let session = URLSession.shared
+            let task = session.dataTask(with: request) { data, response, error in
+                guard
+                    let url = response?.url,
+                    let httpResponse = response as? HTTPURLResponse,
+                    let fields = httpResponse.allHeaderFields as? [String: String]
+                else {
+                    completion(.failure(ServiceError.unkown()))
+                    return
                 }
-                
-            case 400...499:
-                // Client errors
-                if let error = error {
-                    completion(.failure(ServiceError.serverError(error.localizedDescription)))
-                } else {
-                    completion(.failure(ServiceError.decodingError()))
+
+                let cookies = HTTPCookie.cookies(withResponseHeaderFields: fields, for: url)
+                HTTPCookieStorage.shared.setCookies(cookies, for: url, mainDocumentURL: nil)
+                for cookie in cookies {
+                    var cookieProperties = [HTTPCookiePropertyKey: Any]()
+                    cookieProperties[.name] = cookie.name
+                    cookieProperties[.value] = cookie.value
+                    cookieProperties[.domain] = cookie.domain
+                    cookieProperties[.path] = cookie.path
+                    cookieProperties[.version] = cookie.version
+                    cookieProperties[.expires] = Date().addingTimeInterval(31536000)
+
+                    let newCookie = HTTPCookie(properties: cookieProperties)
+                    HTTPCookieStorage.shared.setCookie(newCookie!)
+
+                    print("name: \(cookie.name) value: \(cookie.value)")
                 }
-                
-            default:
-                // Other errors
-                completion(.failure(ServiceError.unkown()))
+
+                switch httpResponse.statusCode {
+                    case 200...299:
+                        // Success
+                        if let data = data {
+                            completion(.success(data))
+                        } else {
+                            completion(.failure(ServiceError.decodingError()))
+                        }
+                        
+                    case 400...499:
+                        // Client errors
+                        if let error = error {
+                            completion(.failure(ServiceError.serverError("Client error: \(httpResponse.statusCode), Description: \(error.localizedDescription)")))
+                        } else {
+                            completion(.failure(ServiceError.decodingError("Client error: \(httpResponse.statusCode), Description: \(error?.localizedDescription)")))
+                        }
+                        
+                    default:
+                        // Other errors
+                        completion(.failure(ServiceError.unkown("Other error: \(httpResponse.statusCode), Description: \(error?.localizedDescription ?? "Unknown error")")))
+                }
+
             }
-        }.resume()
-    }
-
-
+            task.resume()
+        }
     
     // MARK: - Sign Out
     static func signOut() {

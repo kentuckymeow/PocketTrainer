@@ -19,7 +19,7 @@ struct SignInView: View {
             TextField("Password", text: $viewModel.password)
                 .textFieldStyle(CustomTextFieldStyle())
             
-            NavigationLink(destination: ContentView(), isActive: $isActive) {
+            NavigationLink(destination: ContentView(viewModel: HealthDataViewModel()), isActive: $isActive) {
                 Button {
                     didTapSignIn()
                 } label: {
@@ -54,6 +54,27 @@ struct SignInView: View {
             alertManager.showInvalidPasswordAlert()
             return
         }
+        
+        print(userRequest)
+        
+        let encoder = JSONEncoder()
+        let formatter = ISO8601DateFormatter()
+        formatter.timeZone = TimeZone(secondsFromGMT: 0) // Установите нужную временную зону
+        encoder.dateEncodingStrategy = .custom { date, encoder in
+            let dateString = formatter.string(from: date)
+            var container = encoder.singleValueContainer()
+            try container.encode(dateString)
+        }
+
+        do {
+            let data = try encoder.encode(userRequest)
+            if let jsonString = String(data: data, encoding: .utf8) {
+                print(jsonString)
+            }
+        } catch {
+            print("Failed to encode JSON: \(error)")
+        }
+        
         
         guard let request = Endpoint.signIn(userRequest: userRequest).request else { return }
         AuthService.fetch(request: request) { result in
