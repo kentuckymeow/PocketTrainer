@@ -106,7 +106,6 @@ enum Endpoint {
                 let data = try? encoder.encode(userRequest)
                 print("health data update: \(String(data: data ?? Data(), encoding: .utf8) ?? "nil")")
                 return try? encoder.encode(userRequest)
-                return try? JSONEncoder().encode(userRequest)
                 
             case  .userHealthData(_, let userRequest):
                 return nil

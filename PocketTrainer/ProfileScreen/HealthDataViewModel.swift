@@ -16,4 +16,13 @@ class HealthDataViewModel: ObservableObject {
     @Published var dateOfBirth: Date = Date()
     @Published var primaryGoal: PrimaryGoal = .buildMuscle
     @Published var fitnessLevel: FitnessLevel = .beginner
+    
+    func update(with healthData: HealthDataModel) {
+        self.gender = healthData.gender
+        self.weight = healthData.weight
+        self.height = healthData.height
+        self.dateOfBirth = healthData.dateOfBirth
+        self.primaryGoal = healthData.primaryGoal
+        self.fitnessLevel = healthData.fitnessLevel
+    }
 }

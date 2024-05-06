@@ -43,12 +43,12 @@ struct ContentView: View {
     }
     func checkHealthData() {
         let userRequest = HealthDataModel(
-                    gender: viewModel.gender,
-                    weight: viewModel.weight,
-                    height: viewModel.height,
-                    dateOfBirth: viewModel.dateOfBirth,
-                    primaryGoal: viewModel.primaryGoal,
-                    fitnessLevel: viewModel.fitnessLevel
+            gender: viewModel.gender,
+            weight: viewModel.weight,
+            height: viewModel.height,
+            dateOfBirth: viewModel.dateOfBirth,
+            primaryGoal: viewModel.primaryGoal,
+            fitnessLevel: viewModel.fitnessLevel
         )
         
         guard let request = Endpoint.userHealthData(userRequest: userRequest).request else { return }

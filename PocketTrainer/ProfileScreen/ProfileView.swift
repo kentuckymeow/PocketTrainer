@@ -44,8 +44,61 @@ struct ProfileView: View {
             .frame(maxWidth: .infinity)
         }
         .padding()
+        .onAppear(perform: loadHealthData)
     }
+
     
+    func loadHealthData() {
+        let userRequest = HealthDataModel(
+            gender: viewModel.gender,
+            weight: viewModel.weight,
+            height: viewModel.height,
+            dateOfBirth: viewModel.dateOfBirth,
+            primaryGoal: viewModel.primaryGoal,
+            fitnessLevel: viewModel.fitnessLevel
+        )
+            // Создайте запрос для метода userHealthData
+        guard let request = Endpoint.userHealthData(userRequest: userRequest).request else { return }
+
+            // Выполните запрос с помощью AuthService.fetch()
+        AuthService.fetch(request: request) { result in
+            DispatchQueue.main.async {
+                switch result {
+                case .success(let data):
+                    let rawString = String(data: data, encoding: .utf8)
+                                print("Raw data: \(rawString ?? "No data")")
+                    do {
+                        // Декодирование данных
+                        let formatter = ISO8601DateFormatter()
+                        formatter.formatOptions = [.withInternetDateTime, .withFractionalSeconds]
+
+                        let decoder = JSONDecoder()
+                        decoder.dateDecodingStrategy = .custom { decoder in
+                            let container = try decoder.singleValueContainer()
+                            let dateString = try container.decode(String.self)
+                            if let date = formatter.date(from: dateString) {
+                                return date
+                            } else {
+                                throw DecodingError.dataCorruptedError(in: container, debugDescription: "Invalid date format")
+                            }
+                        }
+
+                        let healthData = try decoder.decode(HealthDataModel.self, from: data)
+                        
+                        // Обновите viewModel с полученными данными
+                        self.viewModel.update(with: healthData)
+                    } catch {
+                        print("Failed to decode health data: \(error.localizedDescription)")
+                    }
+                    
+                case .failure(let error):
+                    print("Failed to get user health data: \(error.localizedDescription)")
+                }
+            }
+        }
+
+        }
+
     
         
     func updateHealthData() {
