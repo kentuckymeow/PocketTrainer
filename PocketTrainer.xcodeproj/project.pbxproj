@@ -282,7 +282,6 @@
 		92E8191A2BB0C1FD0042C051 /* PocketTrainer */ = {
 			isa = PBXGroup;
 			children = (
-				92EED3DF2BE2BABA00240A62 /* Info.plist */,
 				92DA1AB92BD50BDE00FA0732 /* AlertManager.swift */,
 				92DA1ABB2BD50DC500FA0732 /* Validator.swift */,
 				92534CDB2BD3F48D00C73E07 /* NetworkLayer */,
@@ -301,6 +300,7 @@
 				923F4D092BB5E840009D0DB2 /* ContentView.swift */,
 				92E8191F2BB0C1FF0042C051 /* Assets.xcassets */,
 				92C141A82BC2F2CE00883EB4 /* video.mp4 */,
+				92EED3DF2BE2BABA00240A62 /* Info.plist */,
 				92E819212BB0C1FF0042C051 /* Preview Content */,
 			);
 			path = PocketTrainer;

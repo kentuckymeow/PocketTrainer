@@ -46,9 +46,23 @@ struct ProfileView: View {
         .padding()
         .onAppear(perform: loadHealthData)
     }
+    
+        
 
     
     func loadHealthData() {
+        // Попытка загрузить данные из UserDefaults
+        var savedHealthData: HealthDataModel?
+        if let savedData = UserDefaults.standard.data(forKey: "HealthData") {
+            do {
+                savedHealthData = try JSONDecoder().decode(HealthDataModel.self, from: savedData)
+                self.viewModel.update(with: savedHealthData!)
+            } catch {
+                print("Failed to load health data from UserDefaults: \(error.localizedDescription)")
+            }
+        }
+
+        // Выполните запрос к серверу
         let userRequest = HealthDataModel(
             gender: viewModel.gender,
             weight: viewModel.weight,
@@ -57,16 +71,16 @@ struct ProfileView: View {
             primaryGoal: viewModel.primaryGoal,
             fitnessLevel: viewModel.fitnessLevel
         )
-            // Создайте запрос для метода userHealthData
+        // Создайте запрос для метода userHealthData
         guard let request = Endpoint.userHealthData(userRequest: userRequest).request else { return }
 
-            // Выполните запрос с помощью AuthService.fetch()
+        // Выполните запрос с помощью AuthService.fetch()
         AuthService.fetch(request: request) { result in
             DispatchQueue.main.async {
                 switch result {
                 case .success(let data):
                     let rawString = String(data: data, encoding: .utf8)
-                                print("Raw data: \(rawString ?? "No data")")
+                    print("Raw data: \(rawString ?? "No data")")
                     do {
                         // Декодирование данных
                         let formatter = ISO8601DateFormatter()
@@ -85,8 +99,19 @@ struct ProfileView: View {
 
                         let healthData = try decoder.decode(HealthDataModel.self, from: data)
                         
-                        // Обновите viewModel с полученными данными
-                        self.viewModel.update(with: healthData)
+                        // Проверьте, совпадают ли новые данные с сохраненными данными
+                        if healthData != savedHealthData {
+                            // Если данные не совпадают, обновите viewModel и сохраните новые данные в UserDefaults
+                            self.viewModel.update(with: healthData)
+
+                            do {
+                                let data = try JSONEncoder().encode(healthData)
+                                UserDefaults.standard.set(data, forKey: "HealthData")
+                            } catch {
+                                print("Failed to save health data to UserDefaults: \(error.localizedDescription)")
+                            }
+                        }
+                        
                     } catch {
                         print("Failed to decode health data: \(error.localizedDescription)")
                     }
@@ -96,8 +121,7 @@ struct ProfileView: View {
                 }
             }
         }
-
-        }
+    }
 
     
         

@@ -28,7 +28,7 @@ enum FitnessLevel: String, Codable, CaseIterable {
     case advanced = "Advanced"
 }
 
-struct HealthDataModel: Codable {
+struct HealthDataModel: Codable, Equatable {
     let gender: Gender
     let weight: Int
     let height: Int
