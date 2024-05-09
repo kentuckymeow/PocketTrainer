@@ -9,7 +9,7 @@ import Foundation
 
 class TrainingViewModel: ObservableObject {
     @Published var trainings: [Training] = [
-        Training(name: "Base Crossfit", time: "30 min", imageName: "crossfit", exercises: [
+        Training(name: "Base Crossfit", time: "30 min", imageName: "crossfit", description: "Не наберешь мышц, но познакомишься с парнем", videoUrl: "sam", exercises: [
             Exercise(name: "Bench press", sets: "4x10", imageName: "BenchPress",videoUrl:"video", description:
                      """
                      "How to do a bench press
@@ -23,7 +23,7 @@ class TrainingViewModel: ObservableObject {
                     """),
             Exercise(name: "Seated dumbbell press", sets: "4x10", imageName: "DumbbellPress", videoUrl: "", description: ""),
         ]),
-        Training(name: "Bodybuilding", time: "1h ", imageName: "bodybuilding", exercises: [
+        Training(name: "Bodybuilding", time: "1h ", imageName: "bodybuilding", description: "МЫШЦЫ КАЧАТЬ КУШАТЬ СПАТЬ", videoUrl: "sam", exercises: [
             Exercise(name: "Lunges with dumbbells", sets: "4x10", imageName: "Lunges",videoUrl: "", description: ""),
             Exercise(name: "Dumbbell row", sets: "4x10", imageName: "DumbbellRow",videoUrl: "", description: ""),
         ]),

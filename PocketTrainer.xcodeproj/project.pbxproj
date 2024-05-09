@@ -42,6 +42,7 @@
 		9258F15F2BC96F7200DAAB45 /* MealInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9258F15E2BC96F7200DAAB45 /* MealInfoView.swift */; };
 		9258F1612BC98F8800DAAB45 /* MealsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9258F1602BC98F8800DAAB45 /* MealsViewModel.swift */; };
 		9276B9D22BE6D12900953FC0 /* ProfilePopUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9276B9D12BE6D12900953FC0 /* ProfilePopUpView.swift */; };
+		92B3C5F02BEBD18300E3F6D3 /* WorkoutDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92B3C5EF2BEBD18300E3F6D3 /* WorkoutDetailView.swift */; };
 		92C141A32BC2E39E00883EB4 /* SelectedExersiseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92C141A22BC2E39E00883EB4 /* SelectedExersiseView.swift */; };
 		92C141AA2BC328E000883EB4 /* video.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 92C141A82BC2F2CE00883EB4 /* video.mp4 */; };
 		92C141AC2BC3300C00883EB4 /* HealthDataViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92C141AB2BC3300B00883EB4 /* HealthDataViewModel.swift */; };
@@ -58,6 +59,7 @@
 		92E819352BB20DE70042C051 /* SignInViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92E819342BB20DE70042C051 /* SignInViewModel.swift */; };
 		92E819382BB20E6A0042C051 /* CustomTextFieldStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92E819372BB20E6A0042C051 /* CustomTextFieldStyle.swift */; };
 		92F128F22BDED6460019DD60 /* HealthsDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92F128F12BDED6460019DD60 /* HealthsDataModel.swift */; };
+		92F354552BED4F6800A6A690 /* sam.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 92F354542BED4F6800A6A690 /* sam.mp4 */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -96,6 +98,7 @@
 		9258F15E2BC96F7200DAAB45 /* MealInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealInfoView.swift; sourceTree = "<group>"; };
 		9258F1602BC98F8800DAAB45 /* MealsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealsViewModel.swift; sourceTree = "<group>"; };
 		9276B9D12BE6D12900953FC0 /* ProfilePopUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilePopUpView.swift; sourceTree = "<group>"; };
+		92B3C5EF2BEBD18300E3F6D3 /* WorkoutDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutDetailView.swift; sourceTree = "<group>"; };
 		92C141A22BC2E39E00883EB4 /* SelectedExersiseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectedExersiseView.swift; sourceTree = "<group>"; };
 		92C141A82BC2F2CE00883EB4 /* video.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = video.mp4; sourceTree = "<group>"; };
 		92C141AB2BC3300B00883EB4 /* HealthDataViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthDataViewModel.swift; sourceTree = "<group>"; };
@@ -114,6 +117,7 @@
 		92E819372BB20E6A0042C051 /* CustomTextFieldStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextFieldStyle.swift; sourceTree = "<group>"; };
 		92EED3DF2BE2BABA00240A62 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		92F128F12BDED6460019DD60 /* HealthsDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthsDataModel.swift; sourceTree = "<group>"; };
+		92F354542BED4F6800A6A690 /* sam.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = sam.mp4; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -222,9 +226,10 @@
 			children = (
 				92196FFE2BB4993F00C7FD29 /* ExerciseView.swift */,
 				923F4D122BB60C09009D0DB2 /* WorkoutSelectionView.swift */,
-				923F4D0E2BB60A8B009D0DB2 /* FavouriteWorkoutsView.swift */,
+				92B3C5EF2BEBD18300E3F6D3 /* WorkoutDetailView.swift */,
 				924847032BB74DFE000080D6 /* WorkoutView.swift */,
 				92C141A22BC2E39E00883EB4 /* SelectedExersiseView.swift */,
+				923F4D0E2BB60A8B009D0DB2 /* FavouriteWorkoutsView.swift */,
 			);
 			path = ExerciseViews;
 			sourceTree = "<group>";
@@ -298,8 +303,6 @@
 				920ECBFB2BC1E1F60019B5B7 /* GoalsScreen */,
 				92E8191B2BB0C1FD0042C051 /* PocketTrainerApp.swift */,
 				923F4D092BB5E840009D0DB2 /* ContentView.swift */,
-				92E8191F2BB0C1FF0042C051 /* Assets.xcassets */,
-				92C141A82BC2F2CE00883EB4 /* video.mp4 */,
 				92EED3DF2BE2BABA00240A62 /* Info.plist */,
 				92E819212BB0C1FF0042C051 /* Preview Content */,
 			);
@@ -309,6 +312,9 @@
 		92E819212BB0C1FF0042C051 /* Preview Content */ = {
 			isa = PBXGroup;
 			children = (
+				92F354542BED4F6800A6A690 /* sam.mp4 */,
+				92C141A82BC2F2CE00883EB4 /* video.mp4 */,
+				92E8191F2BB0C1FF0042C051 /* Assets.xcassets */,
 				92E819222BB0C1FF0042C051 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
@@ -383,6 +389,7 @@
 				92E819232BB0C1FF0042C051 /* Preview Assets.xcassets in Resources */,
 				92C141AA2BC328E000883EB4 /* video.mp4 in Resources */,
 				92E819202BB0C1FF0042C051 /* Assets.xcassets in Resources */,
+				92F354552BED4F6800A6A690 /* sam.mp4 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -406,6 +413,7 @@
 				92E819382BB20E6A0042C051 /* CustomTextFieldStyle.swift in Sources */,
 				924847072BB75183000080D6 /* PlanMealsView.swift in Sources */,
 				92C141AC2BC3300C00883EB4 /* HealthDataViewModel.swift in Sources */,
+				92B3C5F02BEBD18300E3F6D3 /* WorkoutDetailView.swift in Sources */,
 				9258F15F2BC96F7200DAAB45 /* MealInfoView.swift in Sources */,
 				92196FFF2BB4993F00C7FD29 /* ExerciseView.swift in Sources */,
 				923F4D012BB5D067009D0DB2 /* ProfileView.swift in Sources */,

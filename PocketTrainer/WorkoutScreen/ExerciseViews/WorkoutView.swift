@@ -42,7 +42,7 @@ struct WorkoutView: View {
 }
 
 #Preview {
-    WorkoutView(training: Training(name: "Base Crossfit", time: "30 min", imageName: "crossfit", exercises: [
+    WorkoutView(training: Training(name: "Base Crossfit", time: "30 min", imageName: "crossfit", description: "Фу", videoUrl: "sam2", exercises: [
         Exercise(name: "Bench press", sets: "4x10", imageName: "BenchPress",videoUrl: "Bench press", description:""),
         Exercise(name: "Seated dumbbell press", sets: "4x10", imageName: "DumbbellPress",videoUrl: "", description:""),
     ]))

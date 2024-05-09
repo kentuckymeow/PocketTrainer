@@ -14,7 +14,7 @@ struct WorkoutSelectionView: View {
         ScrollView {
             VStack(alignment: .leading) {
                 ForEach(viewModel.trainings) { training in
-                    NavigationLink(destination: WorkoutView(training: training)) {
+                    NavigationLink(destination: WorkoutDetailView(training: training)) {
                         ZStack(alignment: .bottomLeading) {
                             Image(training.imageName)
                                 .frame(height: 120)

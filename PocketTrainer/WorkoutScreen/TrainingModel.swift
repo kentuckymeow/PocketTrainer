@@ -12,6 +12,8 @@ struct Training: Identifiable {
     var name: String
     var time: String
     var imageName: String
+    var description: String
+    var videoUrl: String
     var exercises: [Exercise]
 }
 
