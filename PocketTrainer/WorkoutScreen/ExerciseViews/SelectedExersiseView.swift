@@ -15,7 +15,7 @@ struct SelectedExersiseView: View {
             VStack {
                 Text(exercise.name)
                 VideoPlayer(player: AVPlayer(url:
-                    Bundle.main.url(forResource: exercise.videoUrl, withExtension:"mp4")!))
+                    Bundle.main.url(forResource: exercise.video, withExtension:"mp4")!))
                     
                 Text(exercise.description)
                     .padding()
@@ -23,6 +23,6 @@ struct SelectedExersiseView: View {
         }
 }
 
-#Preview {
-    SelectedExersiseView(exercise: Exercise(name: "Base Crossfit", sets: "4x10", imageName: "BenchPress", videoUrl: "video", description: ""))
-}
+//#Preview {
+//    SelectedExersiseView(exercise: Exercise(name: "Base Crossfit", sets: "4x10", imageName: "BenchPress", videoUrl: "video", description: ""))
+//}

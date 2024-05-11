@@ -13,18 +13,18 @@ struct WorkoutView: View {
     var body: some View {
             ScrollView {
                 VStack(alignment: .leading) {
-                    ForEach(training.exercises) { exercise in
-                        NavigationLink(destination: SelectedExersiseView(exercise:  exercise)) {
+                    ForEach(training.WorkoutToExercise) { workoutToExercise in
+                        NavigationLink(destination: SelectedExersiseView(exercise:  workoutToExercise.exercise)) {
                             ZStack(alignment: .bottomLeading) {
-                                Image(exercise.imageName)
+                                Image(workoutToExercise.exercise.image)
                                     .frame(height: 120)
                                     .cornerRadius(25)
                                 VStack(alignment:.leading) {
-                                    Text(exercise.name)
+                                    Text(workoutToExercise.exercise.name)
                                         .font(.caption)
                                         .fontWeight(.bold)
                                         .foregroundColor(.white)
-                                    Text("\(exercise.sets)")
+                                    Text("\(workoutToExercise.exercise.sets)")
                                         .font(.caption2)
                                         .fontWeight(.bold)
                                         .foregroundColor(.white)
@@ -41,9 +41,9 @@ struct WorkoutView: View {
     }
 }
 
-#Preview {
-    WorkoutView(training: Training(name: "Base Crossfit", time: "30 min", imageName: "crossfit", description: "Фу", videoUrl: "sam2", exercises: [
-        Exercise(name: "Bench press", sets: "4x10", imageName: "BenchPress",videoUrl: "Bench press", description:""),
-        Exercise(name: "Seated dumbbell press", sets: "4x10", imageName: "DumbbellPress",videoUrl: "", description:""),
-    ]))
-}
+//#Preview {
+//    WorkoutView(training: Training(name: "Base Crossfit", duration: "30 min", imageName: "crossfit", description: "Фу", videoUrl: "sam2", exercises: [
+//        Exercise(name: "Bench press", sets: "4x10", imageName: "BenchPress",videoUrl: "Bench press", description:""),
+//        Exercise(name: "Seated dumbbell press", sets: "4x10", imageName: "DumbbellPress",videoUrl: "", description:""),
+//    ]))
+//}

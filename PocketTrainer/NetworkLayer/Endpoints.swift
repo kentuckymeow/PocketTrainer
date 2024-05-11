@@ -15,7 +15,7 @@ enum Endpoint {
     case healthData(path: String = "/users/health-data", userRequest: HealthDataModel)
     case healthDataUpdate(path: String = "/users/update-data", userRequest: HealthDataModel)
     case userHealthData(path: String = "/users/user-health-data", userRequest: HealthDataModel)
-    
+    case findAllWorkouts(path: String = "/workouts",userRequest: Training)
     
     case getData(path: String = "/data/get-data")
     
@@ -45,6 +45,7 @@ enum Endpoint {
                 .healthData(let path, _),
                 .healthDataUpdate(let path, _),
                 .userHealthData(let path, _),
+                .findAllWorkouts(let path, _),
                 .getData(let path):
             return path
         }
@@ -60,7 +61,8 @@ enum Endpoint {
             case .healthDataUpdate:
                 return HTTP.Method.pacth.rawValue
             case .getData,
-                    .userHealthData:
+                    .userHealthData,
+                    .findAllWorkouts:
                 return HTTP.Method.get.rawValue
             
             }
@@ -110,6 +112,9 @@ enum Endpoint {
             case  .userHealthData(_, let userRequest):
                 return nil
                 
+            case .findAllWorkouts(_, let userRequest):
+                return nil
+                
             case .getData:
                 return nil
             
@@ -128,6 +133,7 @@ enum Endpoint {
                     .healthData,
                     .healthDataUpdate,
                     .userHealthData,
+                    .findAllWorkouts,
                     .getData:
                 self.setValue(HTTP.Headers.Value.applicationJson.rawValue, forHTTPHeaderField: HTTP.Headers.Key.contentType.rawValue)
            

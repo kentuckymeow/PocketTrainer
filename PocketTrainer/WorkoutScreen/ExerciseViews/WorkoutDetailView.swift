@@ -45,7 +45,7 @@ struct WorkoutDetailView: View {
                     .font(.title)
                     .fontWeight(.bold)
                 
-                Text("Duration: \(training.time)")
+                Text("Duration: \(training.duration)")
                     .foregroundColor(.white)
                     .font(.subheadline)
                     .fontWeight(.medium)

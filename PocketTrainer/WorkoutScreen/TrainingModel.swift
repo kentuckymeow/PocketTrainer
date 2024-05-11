@@ -7,21 +7,29 @@
 
 import Foundation
 
-struct Training: Identifiable {
-    var id = UUID()
+struct Training: Identifiable, Codable{
+    var id: Int
     var name: String
-    var time: String
-    var imageName: String
+    var duration: Int
+    var imageUrl: String
     var description: String
     var videoUrl: String
-    var exercises: [Exercise]
+    var WorkoutToExercise: [WorkoutToExercise]
 }
 
-struct Exercise: Identifiable {
-    var id = UUID()
+struct WorkoutToExercise: Identifiable, Codable {
+    var id: Int
+    var workoutId: Int
+    var exerciseId: Int
+    var exercise: Exercise
+}
+
+
+struct Exercise: Identifiable, Codable {
+    var id: Int
     var name: String
     var sets: String
-    var imageName: String
-    var videoUrl: String
+    var image: String
+    var video: String
     var description: String
 }

@@ -51,7 +51,6 @@ struct ProfileView: View {
 
     
     func loadHealthData() {
-        // Попытка загрузить данные из UserDefaults
         var savedHealthData: HealthDataModel?
         if let savedData = UserDefaults.standard.data(forKey: "HealthData") {
             do {
@@ -62,7 +61,6 @@ struct ProfileView: View {
             }
         }
 
-        // Выполните запрос к серверу
         let userRequest = HealthDataModel(
             gender: viewModel.gender,
             weight: viewModel.weight,
@@ -71,10 +69,9 @@ struct ProfileView: View {
             primaryGoal: viewModel.primaryGoal,
             fitnessLevel: viewModel.fitnessLevel
         )
-        // Создайте запрос для метода userHealthData
+        
         guard let request = Endpoint.userHealthData(userRequest: userRequest).request else { return }
 
-        // Выполните запрос с помощью AuthService.fetch()
         AuthService.fetch(request: request) { result in
             DispatchQueue.main.async {
                 switch result {
@@ -98,10 +95,8 @@ struct ProfileView: View {
                         }
 
                         let healthData = try decoder.decode(HealthDataModel.self, from: data)
-                        
-                        // Проверьте, совпадают ли новые данные с сохраненными данными
+                    
                         if healthData != savedHealthData {
-                            // Если данные не совпадают, обновите viewModel и сохраните новые данные в UserDefaults
                             self.viewModel.update(with: healthData)
 
                             do {
@@ -141,7 +136,6 @@ struct ProfileView: View {
             DispatchQueue.main.async {
                 switch result {
                 case .success(_):
-                    // Handle success, update UI, etc.
                     print("Health data updated successfully.")
                     
                 case .failure(let error):
@@ -151,7 +145,6 @@ struct ProfileView: View {
                     case .serverError(let string),
                             .unkown(let string),
                             .decodingError(let string):
-                        // Show an alert with the error message
                         print("Failed to update health data: \(string)")
                     }
                 }

@@ -16,7 +16,7 @@ struct WorkoutSelectionView: View {
                 ForEach(viewModel.trainings) { training in
                     NavigationLink(destination: WorkoutDetailView(training: training)) {
                         ZStack(alignment: .bottomLeading) {
-                            Image(training.imageName)
+                            Image(training.imageUrl)
                                 .frame(height: 120)
                                 .cornerRadius(25)
                             VStack(alignment:.leading) {
@@ -24,7 +24,7 @@ struct WorkoutSelectionView: View {
                                     .font(.caption)
                                     .fontWeight(.bold)
                                     .foregroundColor(.white)
-                                Text("Duration: \(training.time)")
+                                Text("Duration: \(training.duration)")
                                     .font(.caption2)
                                     .fontWeight(.bold)
                                     .foregroundColor(.white)
