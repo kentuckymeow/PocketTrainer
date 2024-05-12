@@ -82,23 +82,43 @@ struct GoalsView: View {
                 DatePicker("Date", selection: $goal.date, displayedComponents: .date)
                     .datePickerStyle(.automatic)
                     .padding()
-                Button(action: {
-                    if let id = editingGoalId {
-                        viewModel.updateGoal(id: id, name: goal.name, weight: goal.weight, reps: goal.reps, sets: goal.sets, date: goal.date)
-                    } else {
-                        viewModel.addGoal(name: goal.name, weight: goal.weight, reps: goal.reps, sets: goal.sets, date: goal.date)
+                HStack {
+                    Button(action: {
+                        if let id = editingGoalId {
+                            viewModel.updateGoal(id: id, name: goal.name, weight: goal.weight, reps: goal.reps, sets: goal.sets, date: goal.date)
+                        } else {
+                            viewModel.addGoal(name: goal.name, weight: goal.weight, reps: goal.reps, sets: goal.sets, date: goal.date)
+                        }
+                        
+                        goal = Goal(name: "", weight: "", reps: "", sets: "", date: Date())
+                        editingGoalId = nil
+                        showingPopup = false
+                    }) {
+                        Text("Save")
+                            .frame(width: 80,height: 40)
+                            .foregroundColor(.white)
+                            .buttonStyle(.borderedProminent)
+                            .background(.black)
+                            .cornerRadius(20)
                     }
-                    
-                    goal = Goal(name: "", weight: "", reps: "", sets: "", date: Date())
-                    editingGoalId = nil
-                    showingPopup = false
-                }) {
-                    Text("Save")
-                        .frame(width: 80,height: 40)
-                        .foregroundColor(.white)
-                        .buttonStyle(.borderedProminent)
-                        .background(.black)
-                        .cornerRadius(20)
+                    if editingGoalId != nil {
+                        Button(action: {
+                            if let id = editingGoalId {
+                                viewModel.deleteGoal(id: id)
+                            }
+                            
+                            goal = Goal(name: "", weight: "", reps: "", sets: "", date: Date())
+                            editingGoalId = nil
+                            showingPopup = false
+                        }) {
+                            Text("Delete")
+                                .frame(width: 80,height: 40)
+                                .foregroundColor(.white)
+                                .buttonStyle(.borderedProminent)
+                                .background(.red)
+                                .cornerRadius(20)
+                        }
+                    }
                 }
                 .padding()
             }

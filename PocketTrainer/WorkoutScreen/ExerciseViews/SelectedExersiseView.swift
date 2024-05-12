@@ -10,6 +10,7 @@ import AVKit
 
 struct SelectedExersiseView: View {
     var exercise: Exercise
+    @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
     
     var body: some View {
             VStack {
@@ -20,6 +21,8 @@ struct SelectedExersiseView: View {
                 Text(exercise.description)
                     .padding()
             }
+            .navigationBarBackButtonHidden(true)
+            .navigationBarItems(leading: BackButton(action: { self.presentationMode.wrappedValue.dismiss() }))
         }
 }
 

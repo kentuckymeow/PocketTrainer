@@ -25,5 +25,10 @@ class GoalsViewModel: ObservableObject {
         }
     }
     
+    func deleteGoal(id: UUID) {
+        if let index = goals.firstIndex(where: { $0.id == id }) {
+            goals.remove(at: index)
+        }
+    }
     
 }

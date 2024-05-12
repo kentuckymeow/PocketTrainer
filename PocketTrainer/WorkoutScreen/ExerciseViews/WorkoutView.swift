@@ -9,6 +9,7 @@ import SwiftUI
 
 struct WorkoutView: View {
     let training: Training
+    @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
 
     var body: some View {
             ScrollView {
@@ -37,6 +38,8 @@ struct WorkoutView: View {
                     }
                 }
                 .padding()
+                .navigationBarBackButtonHidden(true)
+                .navigationBarItems(leading: BackButton(action: { self.presentationMode.wrappedValue.dismiss() }))
             }
     }
 }

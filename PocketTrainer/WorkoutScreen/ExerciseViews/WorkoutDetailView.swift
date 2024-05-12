@@ -11,6 +11,7 @@ import AVKit
 struct WorkoutDetailView: View {
     let training: Training
     @State private var player: AVPlayer
+    @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
         
     init(training: Training) {
         self.training = training
@@ -67,14 +68,17 @@ struct WorkoutDetailView: View {
                 .padding(.top, 50)
             }
             .padding()
+            .navigationBarBackButtonHidden(true)
+            .navigationBarItems(leading: BackButton(action: { self.presentationMode.wrappedValue.dismiss() }))
         }
     }
 }
 
 
 //#Preview {
-//    WorkoutDetailView(training: Training(name: "Bodybuilding", time: "30 min", imageName: "crossfit", description: "КУШАЦ СПАТЬ КАЧАЦА", videoUrl: "sam2", exercises: [
-//        Exercise(name: "Bench press", sets: "4x10", imageName: "BenchPress",videoUrl: "Bench press", description:""),
-//        Exercise(name: "Seated dumbbell press", sets: "4x10", imageName: "DumbbellPress",videoUrl: "", description:""),
-//    ]))
+//    WorkoutDetailView(training: Training(id: 1, name: "Bodybuilding", duration: 30, imageUrl: "crossfit", description: "КУШАЦ СПАТЬ КАЧАЦА", videoUrl: "sam2", WorkoutToExercise: [
+//                WorkoutToExercise(id: 1, workoutId: 1, exerciseId: 1, exercise: Exercise(id: 1, name: "Bench press", sets: "4x10", image: "BenchPress",video: "Bench press", description:"")),
+//                WorkoutToExercise(id: 2, workoutId: 1, exerciseId: 2, exercise: Exercise(id: 2, name: "Seated dumbbell press", sets: "4x10", image: "DumbbellPress",video: "", description:"")),
+//            ]))
 //}
+

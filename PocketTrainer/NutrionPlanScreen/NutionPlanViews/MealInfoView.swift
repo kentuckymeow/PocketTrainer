@@ -9,16 +9,21 @@ import SwiftUI
 
 struct MealInfoView: View {
     let meals: Meals
-    
+    @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
     var body: some View {
-        VStack {
-            Text(meals.name)
-            
-            Text(meals.recipe)
-                .padding()
-        }
+       // NavigationView {
+            VStack {
+                Text(meals.name)
+                
+                Text(meals.recipe)
+                    .padding()
+            }
+            .navigationBarBackButtonHidden(true)
+                       .navigationBarItems(leading: BackButton(action: { self.presentationMode.wrappedValue.dismiss() }))
+                   }
+       // }
     }
-}
+
 
 #Preview {
     MealInfoView(meals: Meals(name: "Orange oatmeal with fruit", imageName: "hotdog", kkal: "501", proteins: "9.90", fats: "19.20", carbs: "72.20", recipe: 

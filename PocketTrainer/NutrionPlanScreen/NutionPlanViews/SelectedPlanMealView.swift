@@ -9,44 +9,46 @@ import SwiftUI
 
 struct SelectedPlanMealView: View {
     let planMeals: PlanMeals
-    
+    @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
+
     var body: some View {
-            ScrollView {
-                VStack(alignment: .leading) {
-                    ForEach(planMeals.meals) { meals in
-                        NavigationLink(destination: MealInfoView(meals: meals)) {
-                            HStack() {
-                                VStack(alignment:.leading) {
-                                    Text(meals.name)
-                                        .font(.caption)
-                                        .fontWeight(.bold)
-                                        .padding(.leading)
-                                    Text("kkal\(meals.kkal)")
-                                        .font(.caption2)
-                                        .fontWeight(.bold)
-                                        .padding(.leading)
-                                    Text("PFC:\(meals.proteins)/\(meals.fats)/\(meals.carbs)")
-                                        .font(.caption2)
-                                        .fontWeight(.bold)
-                                        .padding(.leading)
-                                }
-                                Spacer()
-                                    Image(meals.imageName)
-                                    .frame(width:145,height: 150)
-                                    .scaledToFill()
-                                    .padding(.trailing)
-                                }
-                            .overlay(RoundedRectangle(cornerRadius: 25).stroke(Color.black, lineWidth: 2))
-                                .padding(.init(top: 10, leading: 15, bottom: 15, trailing: 15))
+        ScrollView {
+            VStack(alignment: .leading) {
+                ForEach(planMeals.meals) { meals in
+                    NavigationLink(destination: MealInfoView(meals: meals)) {
+                        HStack() {
+                            VStack(alignment:.leading) {
+                                Text(meals.name)
+                                    .font(.caption)
+                                    .fontWeight(.bold)
+                                    .padding(.leading)
+                                Text("kkal\(meals.kkal)")
+                                    .font(.caption2)
+                                    .fontWeight(.bold)
+                                    .padding(.leading)
+                                Text("PFC:\(meals.proteins)/\(meals.fats)/\(meals.carbs)")
+                                    .font(.caption2)
+                                    .fontWeight(.bold)
+                                    .padding(.leading)
                             }
+                            Spacer()
+                            Image(meals.imageName)
+                                .frame(width:145,height: 150)
+                                .scaledToFill()
+                                .padding(.trailing)
                         }
-                        .buttonStyle(PlainButtonStyle())
+                        .overlay(RoundedRectangle(cornerRadius: 25).stroke(Color.black, lineWidth: 2))
+                        .padding(.init(top: 10, leading: 15, bottom: 15, trailing: 15))
                     }
                 }
-                .padding()
+                .buttonStyle(PlainButtonStyle())
             }
+        }
+        .padding()
+        .navigationBarBackButtonHidden(true)
+        .navigationBarItems(leading: BackButton(action: { self.presentationMode.wrappedValue.dismiss() }))
     }
-
+}
 
 #Preview {
     SelectedPlanMealView(planMeals: PlanMeals(name: "Pump Up", kkal: "2300", imageName: "pumpUp", meals: [

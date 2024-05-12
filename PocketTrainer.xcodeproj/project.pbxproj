@@ -46,6 +46,7 @@
 		92C141A32BC2E39E00883EB4 /* SelectedExersiseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92C141A22BC2E39E00883EB4 /* SelectedExersiseView.swift */; };
 		92C141AA2BC328E000883EB4 /* video.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 92C141A82BC2F2CE00883EB4 /* video.mp4 */; };
 		92C141AC2BC3300C00883EB4 /* HealthDataViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92C141AB2BC3300B00883EB4 /* HealthDataViewModel.swift */; };
+		92C53CFB2BF0D7A3006EABBD /* BackButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92C53CFA2BF0D7A3006EABBD /* BackButton.swift */; };
 		92DA1ABA2BD50BDE00FA0732 /* AlertManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92DA1AB92BD50BDE00FA0732 /* AlertManager.swift */; };
 		92DA1ABC2BD50DC500FA0732 /* Validator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92DA1ABB2BD50DC500FA0732 /* Validator.swift */; };
 		92E8191C2BB0C1FD0042C051 /* PocketTrainerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92E8191B2BB0C1FD0042C051 /* PocketTrainerApp.swift */; };
@@ -102,6 +103,7 @@
 		92C141A22BC2E39E00883EB4 /* SelectedExersiseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectedExersiseView.swift; sourceTree = "<group>"; };
 		92C141A82BC2F2CE00883EB4 /* video.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = video.mp4; sourceTree = "<group>"; };
 		92C141AB2BC3300B00883EB4 /* HealthDataViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthDataViewModel.swift; sourceTree = "<group>"; };
+		92C53CFA2BF0D7A3006EABBD /* BackButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackButton.swift; sourceTree = "<group>"; };
 		92DA1AB92BD50BDE00FA0732 /* AlertManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertManager.swift; sourceTree = "<group>"; };
 		92DA1ABB2BD50DC500FA0732 /* Validator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Validator.swift; sourceTree = "<group>"; };
 		92E819182BB0C1FD0042C051 /* PocketTrainer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PocketTrainer.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -143,8 +145,8 @@
 		920ECBF42BC1E14E0019B5B7 /* JoinUsScreen */ = {
 			isa = PBXGroup;
 			children = (
-				92E819322BB208D20042C051 /* JoinUsViewModel.swift */,
 				92E8192E2BB208150042C051 /* JoinUsView.swift */,
+				92E819322BB208D20042C051 /* JoinUsViewModel.swift */,
 				92534D062BD42C8A00C73E07 /* RegisterUserModel.swift */,
 			);
 			path = JoinUsScreen;
@@ -163,9 +165,9 @@
 		920ECBFB2BC1E1F60019B5B7 /* GoalsScreen */ = {
 			isa = PBXGroup;
 			children = (
+				923F4CFE2BB5C90A009D0DB2 /* GoalsView.swift */,
 				9223523A2BB99DF7000DDA73 /* GoalsViewModel.swift */,
 				922352382BB99DD2000DDA73 /* GoalModel .swift */,
-				923F4CFE2BB5C90A009D0DB2 /* GoalsView.swift */,
 			);
 			path = GoalsScreen;
 			sourceTree = "<group>";
@@ -324,6 +326,7 @@
 			isa = PBXGroup;
 			children = (
 				92E819372BB20E6A0042C051 /* CustomTextFieldStyle.swift */,
+				92C53CFA2BF0D7A3006EABBD /* BackButton.swift */,
 			);
 			path = Style;
 			sourceTree = "<group>";
@@ -404,6 +407,7 @@
 				92C141A32BC2E39E00883EB4 /* SelectedExersiseView.swift in Sources */,
 				924847022BB749FE000080D6 /* TrainingViewModel.swift in Sources */,
 				92E8191E2BB0C1FD0042C051 /* RegistrationView.swift in Sources */,
+				92C53CFB2BF0D7A3006EABBD /* BackButton.swift in Sources */,
 				92E819352BB20DE70042C051 /* SignInViewModel.swift in Sources */,
 				92F128F22BDED6460019DD60 /* HealthsDataModel.swift in Sources */,
 				92534D012BD42C0500C73E07 /* HTTP.swift in Sources */,
@@ -586,6 +590,7 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = PocketTrainer/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "Pocket Trainer";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -616,6 +621,7 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = PocketTrainer/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "Pocket Trainer";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;

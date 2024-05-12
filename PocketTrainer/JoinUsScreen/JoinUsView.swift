@@ -11,6 +11,7 @@ struct JoinUsView: View {
     @ObservedObject var viewModel = JoinUsViewModel()
     @ObservedObject var alertManager = AlertManager()
     @State private var isActive = false
+    @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
 
     var body: some View {
         VStack(spacing: 30) {
@@ -36,6 +37,8 @@ struct JoinUsView: View {
                 }
             }
         }
+        .navigationBarBackButtonHidden(true)
+        .navigationBarItems(leading: BackButton(action: { self.presentationMode.wrappedValue.dismiss() }))
         .alert(item: $alertManager.alertItem) { item in
             Alert(title: Text(item.title), message: Text(item.message), dismissButton: .default(Text("Dismiss")))
         }
