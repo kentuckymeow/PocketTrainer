@@ -8,8 +8,6 @@
 import Foundation
 
 class JoinUsViewModel: ObservableObject {
-    
-    @Published var name = ""
     @Published var email = ""
     @Published var password = ""
     @Published var repeatPassword = ""

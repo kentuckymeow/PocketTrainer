@@ -15,8 +15,6 @@ struct JoinUsView: View {
 
     var body: some View {
         VStack(spacing: 30) {
-            TextField("Name", text: $viewModel.name)
-                .textFieldStyle(CustomTextFieldStyle())
             TextField("Email", text: $viewModel.email)
                 .textFieldStyle(CustomTextFieldStyle())
             TextField("Password", text: $viewModel.password)

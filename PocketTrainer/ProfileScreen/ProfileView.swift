@@ -11,43 +11,55 @@ struct ProfileView: View {
     @ObservedObject var viewModel: HealthDataViewModel
 
     var body: some View {
-        VStack {
-            Text("Profile information")
-                .font(.headline)
-            TextField("Name", text: $viewModel.name)
-            TextField("Email", text: $viewModel.email)
-            
+        VStack() {
             Text("Health data")
+                .font(.largeTitle)
+                .fontWeight(.bold)
+            Text("Сhoose your gender")
                 .font(.headline)
             Picker("Gender", selection: $viewModel.gender) {
-                ForEach(Gender.allCases, id: \.self) { gender in
-                    Text(gender.rawValue).tag(gender)
-                }
+                    ForEach(Gender.allCases, id: \.self) { gender in
+                        Text(gender.rawValue).tag(gender)
+                    }
             }
+            .pickerStyle(.inline)
+            Text("Write your weight in kg")
+                .font(.headline)
             TextField("Weight", value: $viewModel.weight, formatter: NumberFormatter())
+                    .textFieldStyle(CustomTextFieldStyle())
+            Text("Write your height in сm")
+                .font(.headline)
             TextField("Height", value: $viewModel.height, formatter: NumberFormatter())
+                    .textFieldStyle(CustomTextFieldStyle())
             DatePicker("Date of Birth", selection: $viewModel.dateOfBirth, displayedComponents: .date)
+            Text("Primary Goal")
+                .font(.headline)
             Picker("Primary Goal", selection: $viewModel.primaryGoal) {
                 ForEach(PrimaryGoal.allCases, id: \.self) { goal in
-                    Text(goal.rawValue).tag(goal)
+                            Text(goal.rawValue).tag(goal)
                 }
             }
+                .pickerStyle(.inline)
+            Text("Fitness Level")
+                .font(.headline)
             Picker("Fitness Level", selection: $viewModel.fitnessLevel) {
                 ForEach(FitnessLevel.allCases, id: \.self) { level in
-                    Text(level.rawValue).tag(level)
+                            Text(level.rawValue).tag(level)
                 }
             }
-            
+                .pickerStyle(.inline)
+                    
             Button(action: updateHealthData) {
                 Text("Update Health Data")
+                    .frame(width: 200,height: 60)
+                    .background(Color.black)
+                    .foregroundColor(.white)
+                    .cornerRadius(20)
             }
-            .frame(maxWidth: .infinity)
         }
         .padding()
         .onAppear(perform: loadHealthData)
     }
-    
-        
 
     
     func loadHealthData() {

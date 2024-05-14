@@ -8,8 +8,6 @@
 import Foundation
 
 class HealthDataViewModel: ObservableObject {
-    @Published var name: String = "Arseni"
-    @Published var email: String = "khatsuk2003@mail.ru"
     @Published var gender: Gender = .male
     @Published var weight: Int = 0
     @Published var height: Int = 0
