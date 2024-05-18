@@ -16,9 +16,13 @@ struct WorkoutSelectionView: View {
                 ForEach(viewModel.trainings) { training in
                     NavigationLink(destination: WorkoutDetailView(training: training)) {
                         ZStack(alignment: .bottomLeading) {
-                            Image(training.imageUrl)
-                                .frame(height: 120)
-                                .cornerRadius(25)
+                            AsyncImage(url: URL(string: training.imageUrl)) { image in
+                                image
+                                    .frame(height: 120)
+                                    .cornerRadius(25)
+                            } placeholder: {
+                                Color.gray
+                            }
                             VStack(alignment:.leading) {
                                 Text(training.name)
                                     .font(.caption)
@@ -54,6 +58,6 @@ struct WorkoutSelectionView: View {
 }
 
 
-#Preview {
-    WorkoutSelectionView(viewModel: TrainingViewModel())
-}
+//#Preview {
+//    WorkoutSelectionView(viewModel: TrainingViewModel(), isTabViewShown: isTabViewShown)
+//}

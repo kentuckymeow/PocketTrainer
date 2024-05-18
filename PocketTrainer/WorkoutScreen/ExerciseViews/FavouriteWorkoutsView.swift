@@ -16,9 +16,13 @@ struct FavouriteWorkoutsView: View {
                 ForEach(viewModel.favouriteWorkouts) { workout in
                     NavigationLink(destination: WorkoutView(training: workout)) {
                     ZStack(alignment: .bottomLeading) {
-                        Image(workout.imageUrl)
-                            .frame(height: 120)
-                            .cornerRadius(25)
+                        AsyncImage(url: URL(string: workout.imageUrl)) { image in
+                            image
+                                .frame(height: 120)
+                                .cornerRadius(25)
+                        } placeholder: {
+                            Color.gray
+                        }
                         VStack(alignment:.leading) {
                             Text(workout.name)
                                 .font(.caption)

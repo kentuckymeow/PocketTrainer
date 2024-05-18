@@ -51,7 +51,7 @@ struct ProfileView: View {
                     
             Button(action: updateHealthData) {
                 Text("Update Health Data")
-                    .frame(width: 200,height: 60)
+                    .frame(width: 200,height: 50)
                     .background(Color.black)
                     .foregroundColor(.white)
                     .cornerRadius(20)

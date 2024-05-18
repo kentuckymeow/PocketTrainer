@@ -15,11 +15,15 @@ struct WorkoutView: View {
             ScrollView {
                 VStack(alignment: .leading) {
                     ForEach(training.WorkoutToExercise) { workoutToExercise in
-                        NavigationLink(destination: SelectedExersiseView(exercise:  workoutToExercise.exercise)) {
+                        NavigationLink(destination: SelectedExerciseView(exercise:  workoutToExercise.exercise)) {
                             ZStack(alignment: .bottomLeading) {
-                                Image(workoutToExercise.exercise.image)
-                                    .frame(height: 120)
-                                    .cornerRadius(25)
+                                AsyncImage(url: URL(string: workoutToExercise.exercise.image)) { image in
+                                    image
+                                        .frame(height: 120)
+                                        .cornerRadius(25)
+                                } placeholder: {
+                                    Color.gray
+                                }
                                 VStack(alignment:.leading) {
                                     Text(workoutToExercise.exercise.name)
                                         .font(.caption)

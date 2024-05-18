@@ -15,8 +15,7 @@ struct WorkoutDetailView: View {
         
     init(training: Training) {
         self.training = training
-        self._player = State(initialValue: AVPlayer(url: URL(fileURLWithPath:
-        Bundle.main.path(forResource: training.videoUrl, ofType: "mp4")!)))
+        self._player = State(initialValue: AVPlayer(url: URL(string: training.videoUrl)!))
     }
     
     var body: some View {

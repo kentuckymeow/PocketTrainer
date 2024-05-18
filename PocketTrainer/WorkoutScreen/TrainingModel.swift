@@ -24,7 +24,6 @@ struct WorkoutToExercise: Identifiable, Codable {
     var exercise: Exercise
 }
 
-
 struct Exercise: Identifiable, Codable {
     var id: Int
     var name: String

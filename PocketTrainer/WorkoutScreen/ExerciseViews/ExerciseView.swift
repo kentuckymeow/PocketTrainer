@@ -11,25 +11,32 @@ struct ExerciseView: View {
     @State var currentTab: Int = 0
     @Namespace var namespace
     var navigationItems: [String] = ["Workout selection", "Favourite workouts"]
-    
     @StateObject var viewModel = TrainingViewModel()
 
     var body: some View {
         NavigationView {
-            VStack {
-                Picker("Tabs", selection: $currentTab) {
-                    ForEach(navigationItems.indices, id: \.self) { index in
-                        Text(self.navigationItems[index]).tag(index)
+            ZStack {
+                VStack {
+                    Picker("Tabs", selection: $currentTab) {
+                        ForEach(navigationItems.indices, id: \.self) { index in
+                            Text(self.navigationItems[index]).tag(index)
+                        }
+                    }
+                    .pickerStyle(SegmentedPickerStyle())
+                    .padding(.horizontal)
+                    
+                    switch currentTab {
+                    case 0:
+                        WorkoutSelectionView(viewModel: viewModel)
+                    default:
+                        FavouriteWorkoutsView(viewModel: viewModel)
                     }
                 }
-                .pickerStyle(SegmentedPickerStyle())
-                .padding(.horizontal)
-
-                switch currentTab {
-                case 0:
-                    WorkoutSelectionView(viewModel: viewModel)
-                default:
-                    FavouriteWorkoutsView(viewModel: viewModel)
+                
+                if viewModel.isLoading {
+                    ProgressView()
+                        .progressViewStyle(CircularProgressViewStyle(tint: .black))
+                        .scaleEffect(2)
                 }
             }
         }
@@ -38,6 +45,6 @@ struct ExerciseView: View {
 
 
 
-#Preview {
-    ExerciseView()
-}
+//#Preview {
+//    ExerciseView()
+//}
