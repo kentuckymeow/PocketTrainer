@@ -24,10 +24,11 @@ struct SelectedExerciseView: View {
         }
         .navigationBarBackButtonHidden(true)
         .navigationBarItems(leading: BackButton(action: { self.presentationMode.wrappedValue.dismiss() }))
+        .toolbar(.hidden,for: .tabBar)
     }
 }
 
 
-//#Preview {
-//    SelectedExersiseView(exercise: Exercise(name: "Base Crossfit", sets: "4x10", imageName: "BenchPress", videoUrl: "video", description: ""))
-//}
+#Preview {
+    SelectedExerciseView(exercise: Exercise(id: 1, name: "Base Crossfit", sets: "4x10", image: "BenchPress", video: "video", description: ""))
+}
