@@ -19,8 +19,8 @@ struct WorkoutDetailView: View {
     }
     
     var body: some View {
-        ZStack{
-            VideoPlayer(player: player) {VStack{}}
+        ZStack {
+            VideoPlayer(player: player)
                 .edgesIgnoringSafeArea(.all)
                 .aspectRatio(contentMode: .fill)
                 .onAppear() {
@@ -30,41 +30,58 @@ struct WorkoutDetailView: View {
                         player.play()
                     }
                 }
-                .onReceive(NotificationCenter.default.publisher(for: UIApplication.willResignActiveNotification)) { _ in
-                    player.play()
-                }
-                .onDisappear(){
+                .onDisappear() {
                     player.pause()
                 }
                 .allowsHitTesting(false)
             
             VStack {
-
-                Text(training.name)
-                    .foregroundColor(.white)
-                    .font(.title)
-                    .fontWeight(.bold)
-                
-                Text("Duration: \(training.duration)")
-                    .foregroundColor(.white)
-                    .font(.subheadline)
-                    .fontWeight(.medium)
-                
-                Text(training.description)
-                    .foregroundColor(.white)
-                    .font(.body)
+                ZStack {
+                    VStack {
+                        Text(training.name)
+                            .foregroundColor(.white)
+                            .font(.title)
+                            .fontWeight(.bold)
+                            .padding(.horizontal, 20)
+                        
+                        Text("Duration: \(training.duration)")
+                            .foregroundColor(.white)
+                            .font(.subheadline)
+                            .fontWeight(.medium)
+                            .padding(.horizontal, 20)
+                        
+                        Text(training.description)
+                            .foregroundColor(.white)
+                            .font(.body)
+                            .padding(.horizontal, 10) // Reduced horizontal padding
+                            .frame(maxWidth: 250)
+                            .padding(.vertical, 5)
+                            .multilineTextAlignment(.center)
+                        
+                        
+                        NavigationLink(destination: WorkoutView(training: training)) {
+                            Text("Start training")
+                                .fontWeight(.bold)
+                                .padding()
+                                .foregroundColor(.white)
+                                .background(
+                                    RoundedRectangle(
+                                        cornerRadius: 20,
+                                        style: .continuous
+                                    )
+                                    .stroke(Color.white, lineWidth: 3)
+                                )
+                                .padding()
+                        }
+                        .padding(.top, 50)
+                    }
                     .padding()
-                
-                NavigationLink(destination: WorkoutView(training: training)) {
-                    Text("Start")
-                        .font(.title2)
-                        .fontWeight(.bold)
-                        .padding()
-                        .background(Color.blue)
-                        .foregroundColor(.white)
-                        .cornerRadius(10)
+                    .background(
+                        RoundedRectangle(cornerRadius: 20)
+                            .stroke(Color.white, lineWidth: 2)
+                    )
+                    .padding(.horizontal, 20)
                 }
-                .padding(.top, 50)
             }
             .padding()
             .navigationBarBackButtonHidden(true)
@@ -73,11 +90,10 @@ struct WorkoutDetailView: View {
     }
 }
 
-
-//#Preview {
-//    WorkoutDetailView(training: Training(id: 1, name: "Bodybuilding", duration: 30, imageUrl: "crossfit", description: "КУШАЦ СПАТЬ КАЧАЦА", videoUrl: "sam2", WorkoutToExercise: [
-//                WorkoutToExercise(id: 1, workoutId: 1, exerciseId: 1, exercise: Exercise(id: 1, name: "Bench press", sets: "4x10", image: "BenchPress",video: "Bench press", description:"")),
-//                WorkoutToExercise(id: 2, workoutId: 1, exerciseId: 2, exercise: Exercise(id: 2, name: "Seated dumbbell press", sets: "4x10", image: "DumbbellPress",video: "", description:"")),
-//            ]))
-//}
+#Preview {
+    WorkoutDetailView(training: Training(id: 1, name: "Bodybuilding", duration: 30, imageUrl: "crossfit", description: "Bodybuilding training focuses on developing muscle size, symmetry, and definition through a combination of weightlifting, resistance exercises", videoUrl: "sam", WorkoutToExercise: [
+                WorkoutToExercise(id: 1, workoutId: 1, exerciseId: 1, exercise: Exercise(id: 1, name: "Bench press", sets: "4x10", image: "BenchPress",video: "Bench press", description:"")),
+                WorkoutToExercise(id: 2, workoutId: 1, exerciseId: 2, exercise: Exercise(id: 2, name: "Seated dumbbell press", sets: "4x10", image: "DumbbellPress",video: "", description:"")),
+            ]))
+}
 

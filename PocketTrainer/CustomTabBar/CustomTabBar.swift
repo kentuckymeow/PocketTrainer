@@ -18,6 +18,10 @@ struct CustomTabBar: View {
             TabButton(selectedTab: $selectedTab, tab: .nutrionPlan, imageName: "meal")
             TabButton(selectedTab: $selectedTab, tab: .profile, imageName: "user")
         }
+        .padding(.vertical,10)
+        .padding(.horizontal,20)
+        .background(Color.white)
+        .cornerRadius(25)
     }
 }
 

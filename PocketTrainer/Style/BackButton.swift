@@ -12,7 +12,8 @@ struct BackButton: View {
     
     var body: some View {
         Button(action: action) {
-            Image("back")
+            Image(systemName: "chevron.left")
+                .foregroundColor(.black)
         }
     }
 }

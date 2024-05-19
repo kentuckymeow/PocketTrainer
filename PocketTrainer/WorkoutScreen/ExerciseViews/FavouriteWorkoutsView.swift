@@ -14,7 +14,7 @@ struct FavouriteWorkoutsView: View {
         ScrollView {
             VStack(alignment: .leading) {
                 ForEach(viewModel.favouriteWorkouts) { workout in
-                    NavigationLink(destination: WorkoutView(training: workout)) {
+                    NavigationLink(destination: WorkoutDetailView(training: workout)) {
                     ZStack(alignment: .bottomLeading) {
                         AsyncImage(url: URL(string: workout.imageUrl)) { image in
                             image
@@ -45,6 +45,6 @@ struct FavouriteWorkoutsView: View {
 }
 
 
-#Preview {
-    FavouriteWorkoutsView(viewModel: TrainingViewModel())
-}
+//#Preview {
+//    FavouriteWorkoutsView(viewModel: TrainingViewModel(), showTabBar: Binding<Bool>)
+//}

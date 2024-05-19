@@ -28,8 +28,6 @@ struct ContentView: View {
                    
             }
             CustomTabBar(selectedTab: $selectedTab)
-            
-           
         }
         
         .sheet(isPresented: $isProfilePopUpViewShown) {
@@ -39,6 +37,7 @@ struct ContentView: View {
         .navigationBarBackButtonHidden(true)
         .onAppear {
             checkHealthData()
+       //     UITabBar.appearance().backgroundColor = .white
         }
     }
     func checkHealthData() {
