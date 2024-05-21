@@ -272,13 +272,12 @@
 			path = ProfilePopUpView;
 			sourceTree = "<group>";
 		};
-		92C563CE2BFBBE78002140B4 /* LocalStorage */ = {
+		92C563D62BFC8F85002140B4 /* LocalStorage */ = {
 			isa = PBXGroup;
 			children = (
 				92C563D42BFBDAA6002140B4 /* DataStorageManager.swift */,
 			);
-			name = LocalStorage;
-			path = "ёLocalStorage";
+			path = LocalStorage;
 			sourceTree = "<group>";
 		};
 		92E8190F2BB0C1FD0042C051 = {
@@ -300,7 +299,7 @@
 		92E8191A2BB0C1FD0042C051 /* PocketTrainer */ = {
 			isa = PBXGroup;
 			children = (
-				92C563CE2BFBBE78002140B4 /* LocalStorage */,
+				92C563D62BFC8F85002140B4 /* LocalStorage */,
 				92DA1AB92BD50BDE00FA0732 /* AlertManager.swift */,
 				92DA1ABB2BD50DC500FA0732 /* Validator.swift */,
 				92534CDB2BD3F48D00C73E07 /* NetworkLayer */,
