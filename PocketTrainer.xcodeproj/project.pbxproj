@@ -47,6 +47,7 @@
 		92C141AA2BC328E000883EB4 /* video.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 92C141A82BC2F2CE00883EB4 /* video.mp4 */; };
 		92C141AC2BC3300C00883EB4 /* HealthDataViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92C141AB2BC3300B00883EB4 /* HealthDataViewModel.swift */; };
 		92C53CFB2BF0D7A3006EABBD /* BackButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92C53CFA2BF0D7A3006EABBD /* BackButton.swift */; };
+		92C563D52BFBDAA6002140B4 /* DataStorageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92C563D42BFBDAA6002140B4 /* DataStorageManager.swift */; };
 		92DA1ABA2BD50BDE00FA0732 /* AlertManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92DA1AB92BD50BDE00FA0732 /* AlertManager.swift */; };
 		92DA1ABC2BD50DC500FA0732 /* Validator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92DA1ABB2BD50DC500FA0732 /* Validator.swift */; };
 		92E8191C2BB0C1FD0042C051 /* PocketTrainerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92E8191B2BB0C1FD0042C051 /* PocketTrainerApp.swift */; };
@@ -104,6 +105,7 @@
 		92C141A82BC2F2CE00883EB4 /* video.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = video.mp4; sourceTree = "<group>"; };
 		92C141AB2BC3300B00883EB4 /* HealthDataViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthDataViewModel.swift; sourceTree = "<group>"; };
 		92C53CFA2BF0D7A3006EABBD /* BackButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackButton.swift; sourceTree = "<group>"; };
+		92C563D42BFBDAA6002140B4 /* DataStorageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataStorageManager.swift; sourceTree = "<group>"; };
 		92DA1AB92BD50BDE00FA0732 /* AlertManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertManager.swift; sourceTree = "<group>"; };
 		92DA1ABB2BD50DC500FA0732 /* Validator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Validator.swift; sourceTree = "<group>"; };
 		92E819182BB0C1FD0042C051 /* PocketTrainer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PocketTrainer.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -270,6 +272,15 @@
 			path = ProfilePopUpView;
 			sourceTree = "<group>";
 		};
+		92C563CE2BFBBE78002140B4 /* LocalStorage */ = {
+			isa = PBXGroup;
+			children = (
+				92C563D42BFBDAA6002140B4 /* DataStorageManager.swift */,
+			);
+			name = LocalStorage;
+			path = "ёLocalStorage";
+			sourceTree = "<group>";
+		};
 		92E8190F2BB0C1FD0042C051 = {
 			isa = PBXGroup;
 			children = (
@@ -289,6 +300,7 @@
 		92E8191A2BB0C1FD0042C051 /* PocketTrainer */ = {
 			isa = PBXGroup;
 			children = (
+				92C563CE2BFBBE78002140B4 /* LocalStorage */,
 				92DA1AB92BD50BDE00FA0732 /* AlertManager.swift */,
 				92DA1ABB2BD50DC500FA0732 /* Validator.swift */,
 				92534CDB2BD3F48D00C73E07 /* NetworkLayer */,
@@ -428,6 +440,7 @@
 				92E8192D2BB1FDF50042C051 /* RegistrationViewModel.swift in Sources */,
 				92E8192F2BB208150042C051 /* JoinUsView.swift in Sources */,
 				921970012BB49FD300C7FD29 /* CustomTabBar.swift in Sources */,
+				92C563D52BFBDAA6002140B4 /* DataStorageManager.swift in Sources */,
 				923F4CFF2BB5C90A009D0DB2 /* GoalsView.swift in Sources */,
 				92534D052BD42C5500C73E07 /* DataArray.swift in Sources */,
 				92534D0A2BD42D8800C73E07 /* Constants.swift in Sources */,

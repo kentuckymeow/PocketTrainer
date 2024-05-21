@@ -37,7 +37,6 @@ struct ContentView: View {
         .navigationBarBackButtonHidden(true)
         .onAppear {
             checkHealthData()
-       //     UITabBar.appearance().backgroundColor = .white
         }
     }
     func checkHealthData() {

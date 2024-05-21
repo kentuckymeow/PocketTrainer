@@ -53,7 +53,7 @@ struct WorkoutDetailView: View {
                         Text(training.description)
                             .foregroundColor(.white)
                             .font(.body)
-                            .padding(.horizontal, 10) // Reduced horizontal padding
+                            .padding(.horizontal, 10)
                             .frame(maxWidth: 250)
                             .padding(.vertical, 5)
                             .multilineTextAlignment(.center)

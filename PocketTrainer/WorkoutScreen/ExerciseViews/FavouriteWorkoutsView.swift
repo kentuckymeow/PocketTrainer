@@ -22,6 +22,8 @@ struct FavouriteWorkoutsView: View {
                                 .cornerRadius(25)
                         } placeholder: {
                             Color.gray
+                                .frame(height: 120)
+                                .cornerRadius(25)
                         }
                         VStack(alignment:.leading) {
                             Text(workout.name)
