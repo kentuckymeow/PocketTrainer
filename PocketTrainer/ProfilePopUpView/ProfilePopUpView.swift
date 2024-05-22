@@ -12,52 +12,111 @@ struct ProfilePopUpView: View {
     @Binding var isProfilePopUpViewShown: Bool
 
     var body: some View {
-        VStack() {
-            Text("Health data")
-                .font(.largeTitle)
-                .fontWeight(.bold)
-            Text("Сhoose your gender")
-                .font(.headline)
-            Picker("Gender", selection: $viewModel.gender) {
-                    ForEach(Gender.allCases, id: \.self) { gender in
-                        Text(gender.rawValue).tag(gender)
-                    }
-            }
-            .pickerStyle(.inline)
-            TextField("Weight", value: $viewModel.weight, formatter: NumberFormatter())
-                    .textFieldStyle(CustomTextFieldStyle())
-            TextField("Height", value: $viewModel.height, formatter: NumberFormatter())
-                    .textFieldStyle(CustomTextFieldStyle())
-            DatePicker("Date of Birth", selection: $viewModel.dateOfBirth, displayedComponents: .date)
-            Text("Primary Goal")
-                .font(.headline)
-            Picker("Primary Goal", selection: $viewModel.primaryGoal) {
-                ForEach(PrimaryGoal.allCases, id: \.self) { goal in
-                            Text(goal.rawValue).tag(goal)
-                }
-            }
-                .pickerStyle(.inline)
-            Text("Fitness Level")
-                .font(.headline)
-            Picker("Fitness Level", selection: $viewModel.fitnessLevel) {
-                ForEach(FitnessLevel.allCases, id: \.self) { level in
-                            Text(level.rawValue).tag(level)
-                }
-            }
-                .pickerStyle(.inline)
+        ScrollView {
+            VStack(spacing: 20) {
+                Text("Health Data")
+                    .font(.largeTitle)
+                    .fontWeight(.bold)
+                    .foregroundColor(.black)
+                    .padding(.top)
+                
+                VStack(alignment: .leading, spacing: 10) {
+                    Text("Choose your gender")
+                        .font(.headline)
+                        .foregroundColor(.black)
                     
-            Button(action: saveHealthData) {
-                Text("Save Health Data")
-                    .frame(width: 200,height: 60)
-                    .background(Color.black)
-                    .foregroundColor(.white)
-                    .cornerRadius(20)
+                    Picker("Gender", selection: $viewModel.gender) {
+                        ForEach(Gender.allCases, id: \.self) { gender in
+                            Text(gender.rawValue).tag(gender)
+                                .foregroundColor(.black)
+                        }
+                    }
+                    .pickerStyle(SegmentedPickerStyle())
+                }
+                .padding(.horizontal)
+                
+                VStack(alignment: .leading, spacing: 10) {
+                    Text("Write your weight in kg")
+                        .font(.headline)
+                        .foregroundColor(.black)
+                    
+                    TextField("Weight", value: $viewModel.weight, formatter: NumberFormatter())
+                        .textFieldStyle(RoundedBorderTextFieldStyle())
+                        .keyboardType(.decimalPad)
+                        .foregroundColor(.black)
+                }
+                .padding(.horizontal)
+                
+                VStack(alignment: .leading, spacing: 10) {
+                    Text("Write your height in cm")
+                        .font(.headline)
+                        .foregroundColor(.black)
+                    
+                    TextField("Height", value: $viewModel.height, formatter: NumberFormatter())
+                        .textFieldStyle(RoundedBorderTextFieldStyle())
+                        .keyboardType(.decimalPad)
+                        .foregroundColor(.black)
+                }
+                .padding(.horizontal)
+                
+                VStack(alignment: .leading, spacing: 10) {
+                    DatePicker("Date of Birth", selection: $viewModel.dateOfBirth, displayedComponents: .date)
+                        .datePickerStyle(.compact)
+                        .accentColor(.black)
+                        .font(.headline)
+                }
+                .padding(.horizontal)
+                
+                VStack(alignment: .center) {
+                    Text("Primary Goal")
+                        .font(.headline)
+                        .foregroundColor(.black)
+                    
+                    Picker("Primary Goal", selection: $viewModel.primaryGoal) {
+                        ForEach(PrimaryGoal.allCases, id: \.self) { goal in
+                            Text(goal.rawValue).tag(goal)
+                                .foregroundColor(.black)
+                        }
+                    }
+                    .accentColor(.secondary)
+                    .pickerStyle(MenuPickerStyle())
+                }
+                .padding(.horizontal)
+                
+                VStack(alignment: .leading, spacing: 10) {
+                    Text("Fitness Level")
+                        .font(.headline)
+                        .foregroundColor(.black)
+                    
+                    Picker("Fitness Level", selection: $viewModel.fitnessLevel) {
+                        ForEach(FitnessLevel.allCases, id: \.self) { level in
+                            Text(level.rawValue).tag(level)
+                                .foregroundColor(.black)
+                        }
+                    }
+                    .accentColor(.secondary)
+                    .pickerStyle(MenuPickerStyle())
+                }
+                .padding(.horizontal)
+                
+                Button(action: saveHealthData) {
+                    Text("Update Health Data")
+                        .frame(maxWidth: .infinity)
+                        .frame(height: 50)
+                        .background(Color.black)
+                        .foregroundColor(.white)
+                        .cornerRadius(10)
+                }
+                .padding(.horizontal)
             }
+            .padding()
+            .background(Color.white)
+            .cornerRadius(15)
+            .shadow(color: Color.black.opacity(0.2), radius: 10, x: 0, y: 5)
+            .padding()
         }
-        .padding()
+        .background(Color(.systemGray6).edgesIgnoringSafeArea(.all))
     }
-    
-    
         
     func saveHealthData() {
         let userRequest = HealthDataModel(

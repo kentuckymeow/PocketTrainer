@@ -21,6 +21,7 @@ struct GoalsView: View {
     }
     
     var body: some View {
+    ScrollView {
         VStack {
             HStack {
                 Spacer()
@@ -62,6 +63,8 @@ struct GoalsView: View {
             }
             Spacer()
         }
+    }
+    .toolbar(.hidden, for: .tabBar)
         .sheet(isPresented: $showingPopup) {
             VStack {
                 Text("Write your Goals")

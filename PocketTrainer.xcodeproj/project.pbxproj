@@ -207,10 +207,10 @@
 		920ECBFF2BC1E29C0019B5B7 /* NutrionPlanScreen */ = {
 			isa = PBXGroup;
 			children = (
-				9248470C2BB7543C000080D6 /* MealsModel.swift */,
-				9248470A2BB75409000080D6 /* PlanMealsViewModel.swift */,
-				9258F1602BC98F8800DAAB45 /* MealsViewModel.swift */,
 				924847052BB7510E000080D6 /* NutionPlanViews */,
+				9248470C2BB7543C000080D6 /* MealsModel.swift */,
+				9258F1602BC98F8800DAAB45 /* MealsViewModel.swift */,
+				9248470A2BB75409000080D6 /* PlanMealsViewModel.swift */,
 			);
 			path = NutrionPlanScreen;
 			sourceTree = "<group>";

@@ -35,6 +35,7 @@ struct AchievementsView: View {
         }
     }
 }
+
 #Preview {
     AchievementsView(viewModel: AchievementsViewModel())
 }

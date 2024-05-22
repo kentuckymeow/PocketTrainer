@@ -10,23 +10,76 @@ import SwiftUI
 struct MealInfoView: View {
     let meals: Meals
     @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
+    
     var body: some View {
-       // NavigationView {
-            VStack {
+        VStack(alignment: .leading) {
+            
+            VStack(alignment: .leading, spacing: 16) {
                 Text(meals.name)
+                    .font(.title2)
+                    .fontWeight(.bold)
+                    .padding(.bottom, 8)
+                HStack {
+                    Spacer()
+                    Image(meals.imageName)
+                        .resizable()
+                        .aspectRatio(contentMode: .fit)
+                        .frame(maxHeight: 170)
+                        .padding(.bottom, 16)
+                    Spacer()
+                }
                 
-                Text(meals.recipe)
-                    .padding()
+                
+                HStack {
+                    VStack {
+                        Text("Calories")
+                        Text(meals.kkal)
+                            .fontWeight(.bold)
+                    }
+                    Spacer()
+                    VStack {
+                        Text("Proteins")
+                        Text("\(meals.proteins)g")
+                            .fontWeight(.bold)
+                    }
+                    Spacer()
+                    VStack {
+                        Text("Fats")
+                        Text("\(meals.fats)g")
+                            .fontWeight(.bold)
+                    }
+                        Spacer()
+                    VStack {
+                        Text("Carbs")
+                        Text("\(meals.carbs)g")
+                            .fontWeight(.bold)
+                    }
+                }
+                .padding(.bottom, 16)
+                
+                Text("Recipe")
+                    .font(.title2)
+                    .fontWeight(.semibold)
+                    .padding(.bottom, 8)
+                
+                ScrollView {
+                    Text(meals.recipe)
+                        .padding()
+                        .background(Color(.systemGray6))
+                        .cornerRadius(10)
+                }
             }
-            .navigationBarBackButtonHidden(true)
-                       .navigationBarItems(leading: BackButton(action: { self.presentationMode.wrappedValue.dismiss() }))
-                   }
-       // }
+            .padding()
+        }
+        .navigationBarBackButtonHidden(true)
+        .navigationBarItems(leading: BackButton(action: { self.presentationMode.wrappedValue.dismiss() }))
+                          }
     }
 
 
+
 #Preview {
-    MealInfoView(meals: Meals(name: "Orange oatmeal with fruit", imageName: "hotdog", kkal: "501", proteins: "9.90", fats: "19.20", carbs: "72.20", recipe: 
+    MealInfoView(meals: Meals(name: "Orange oatmeal with fruit", imageName: "hotdog", kkal: "501", proteins: "9.90", fats: "19.20", carbs: "72.20", recipe:
                                 """
                                 Here is the recipe for oatmeal with orange and fruits :
                                 
@@ -45,5 +98,5 @@ struct MealInfoView: View {
                                 When the oatmeal is ready, add the butter, sugar, and salt. Stir until the sugar and salt are completely dissolved.
                                 Add the chopped fruits and orange juice. Stir.
                                 Serve the oatmeal hot. Enjoy your meal!
-"""))
+                                """))
 }
