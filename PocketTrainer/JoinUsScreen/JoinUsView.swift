@@ -15,19 +15,19 @@ struct JoinUsView: View {
 
     var body: some View {
         VStack(spacing: 30) {
-            TextField("Email", text: $viewModel.email)
+            TextField("Электронная почта", text: $viewModel.email)
                 .textFieldStyle(CustomTextFieldStyle())
-            TextField("Password", text: $viewModel.password)
+            TextField("Пароль", text: $viewModel.password)
                 .textFieldStyle(CustomTextFieldStyle())
-            TextField("Repeat password", text: $viewModel.repeatPassword)
+            TextField("Повторите пароль", text: $viewModel.repeatPassword)
                 .textFieldStyle(CustomTextFieldStyle())
             
             NavigationLink(destination: ContentView(viewModel: HealthDataViewModel()), isActive: $isActive) {
                 Button {
                     didTapSignUp()
                 } label: {
-                    Text("Join Us")
-                        .frame(width: 200,height: 60)
+                    Text("Присоединяйтесь к нам")
+                        .frame(width: 250,height: 60)
                         .background(Color.black)
                         .foregroundColor(.white)
                         .cornerRadius(20)

@@ -24,7 +24,7 @@ struct PlanMealsView: View {
                                         .font(.caption)
                                         .fontWeight(.bold)
                                         .foregroundColor(.white)
-                                    Text("\(meals.kkal) kkal")
+                                    Text("\(meals.kkal) ккал")
                                         .font(.caption2)
                                         .fontWeight(.bold)
                                         .foregroundColor(.white)

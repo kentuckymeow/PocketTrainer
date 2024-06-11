@@ -9,7 +9,7 @@ import SwiftUI
 
 struct NutrionPlansView: View {
     @State var currentTab: Int = 0
-    var navigationItems: [String] = ["Plan meals", "Meals"]
+    var navigationItems: [String] = ["Планы питания", "Блюда"]
 
     var body: some View {
         NavigationView {

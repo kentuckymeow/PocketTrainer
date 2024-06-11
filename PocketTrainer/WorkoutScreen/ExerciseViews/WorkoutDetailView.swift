@@ -44,7 +44,7 @@ struct WorkoutDetailView: View {
                             .fontWeight(.bold)
                             .padding(.horizontal, 20)
                         
-                        Text("Duration: \(training.duration)")
+                        Text("Продолжительность: \(training.duration) минут")
                             .foregroundColor(.white)
                             .font(.subheadline)
                             .fontWeight(.medium)
@@ -60,7 +60,7 @@ struct WorkoutDetailView: View {
                         
                         
                         NavigationLink(destination: WorkoutView(training: training)) {
-                            Text("Start training")
+                            Text("Начать тренировку")
                                 .fontWeight(.bold)
                                 .padding()
                                 .foregroundColor(.white)

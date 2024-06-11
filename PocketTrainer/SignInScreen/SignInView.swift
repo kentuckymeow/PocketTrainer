@@ -15,16 +15,16 @@ struct SignInView: View {
 
     var body: some View {
         VStack(spacing: 30) {
-            TextField("Email", text: $viewModel.email)
+            TextField("Электронная почта", text: $viewModel.email)
                 .textFieldStyle(CustomTextFieldStyle())
-            TextField("Password", text: $viewModel.password)
+            TextField("Пароль", text: $viewModel.password)
                 .textFieldStyle(CustomTextFieldStyle())
             
             NavigationLink(destination: ContentView(viewModel: HealthDataViewModel()), isActive: $isActive) {
                 Button {
                     didTapSignIn()
                 } label: {
-                    Text("Sign In")
+                    Text("Войти")
                         .frame(width: 200,height: 60)
                         .background(Color.black)
                         .foregroundColor(.white)

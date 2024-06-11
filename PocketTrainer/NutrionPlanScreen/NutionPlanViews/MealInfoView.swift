@@ -32,32 +32,32 @@ struct MealInfoView: View {
                 
                 HStack {
                     VStack {
-                        Text("Calories")
+                        Text("Каллории")
                         Text(meals.kkal)
                             .fontWeight(.bold)
                     }
                     Spacer()
                     VStack {
-                        Text("Proteins")
-                        Text("\(meals.proteins)g")
+                        Text("Белки")
+                        Text("\(meals.proteins)г")
                             .fontWeight(.bold)
                     }
                     Spacer()
                     VStack {
-                        Text("Fats")
-                        Text("\(meals.fats)g")
+                        Text("Жиры")
+                        Text("\(meals.fats)г")
                             .fontWeight(.bold)
                     }
                         Spacer()
                     VStack {
-                        Text("Carbs")
-                        Text("\(meals.carbs)g")
+                        Text("Углеводы")
+                        Text("\(meals.carbs)г")
                             .fontWeight(.bold)
                     }
                 }
                 .padding(.bottom, 16)
                 
-                Text("Recipe")
+                Text("Рецепт")
                     .font(.title2)
                     .fontWeight(.semibold)
                     .padding(.bottom, 8)
@@ -79,24 +79,24 @@ struct MealInfoView: View {
 
 
 #Preview {
-    MealInfoView(meals: Meals(name: "Orange oatmeal with fruit", imageName: "hotdog", kkal: "501", proteins: "9.90", fats: "19.20", carbs: "72.20", recipe:
+    MealInfoView(meals: Meals(name: "Апельсиновая овсянка с фруктами", imageName: "hotdog", kkal: "501", proteins: "9.90", fats: "19.20", carbs: "72.20", recipe:
                                 """
-                                Here is the recipe for oatmeal with orange and fruits :
-                                
-                                Ingredients:
-                                Oatmeal: 330 g
-                                Sugar: to taste
-                                Canned peaches: to taste
-                                Canned pineapples: to taste
-                                82.5% butter: 60 g
-                                Salt: to taste
-                                Orange juice: to taste
-                                Preparation:
-                                Pour a sufficient amount of water into a saucepan and bring it to a boil.
-                                Add the oatmeal and simmer until cooked (about 15 minutes).
-                                While the oatmeal is cooking, cut the canned peaches and pineapples into small pieces.
-                                When the oatmeal is ready, add the butter, sugar, and salt. Stir until the sugar and salt are completely dissolved.
-                                Add the chopped fruits and orange juice. Stir.
-                                Serve the oatmeal hot. Enjoy your meal!
+                                Вот рецепт овсяной каши с апельсином и фруктами:
+                                                                  
+                                Ингредиенты:
+                                Овсянка: 330 g
+                                Сахар: по вкусу
+                                Консервированные персики: по вкусу
+                                Консервированные ананасы: по вкусу
+                                Сливочное масло 82,5%: 60 g
+                                Соль: по вкусу
+                                Апельсиновый сок: по вкусу
+                                Приготовление:
+                                Налейте в кастрюлю достаточное количество воды и доведите ее до кипения.
+                                Добавьте овсянку и варите до готовности (около 15 минут).
+                                Пока овсянка варится, нарежьте консервированные персики и ананасы на мелкие кусочки.
+                                Когда овсянка будет готова, добавьте масло, сахар и соль. Перемешайте до полного растворения сахара и соли.
+                                Добавьте нарезанные фрукты и апельсиновый сок. Перемешайте.
+                                Подавайте овсянку горячей. Приятного аппетита!
                                 """))
 }

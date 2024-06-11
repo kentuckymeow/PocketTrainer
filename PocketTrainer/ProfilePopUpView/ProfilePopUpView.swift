@@ -14,14 +14,14 @@ struct ProfilePopUpView: View {
     var body: some View {
         ScrollView {
             VStack(spacing: 20) {
-                Text("Health Data")
+                Text("Данные о здоровье")
                     .font(.largeTitle)
                     .fontWeight(.bold)
                     .foregroundColor(.black)
                     .padding(.top)
                 
                 VStack(alignment: .leading, spacing: 10) {
-                    Text("Choose your gender")
+                    Text("Выберите свой пол")
                         .font(.headline)
                         .foregroundColor(.black)
                     
@@ -36,7 +36,7 @@ struct ProfilePopUpView: View {
                 .padding(.horizontal)
                 
                 VStack(alignment: .leading, spacing: 10) {
-                    Text("Write your weight in kg")
+                    Text("Напишите свой вес в кг")
                         .font(.headline)
                         .foregroundColor(.black)
                     
@@ -48,7 +48,7 @@ struct ProfilePopUpView: View {
                 .padding(.horizontal)
                 
                 VStack(alignment: .leading, spacing: 10) {
-                    Text("Write your height in cm")
+                    Text("Напишите саой рост в см")
                         .font(.headline)
                         .foregroundColor(.black)
                     
@@ -60,15 +60,16 @@ struct ProfilePopUpView: View {
                 .padding(.horizontal)
                 
                 VStack(alignment: .leading, spacing: 10) {
-                    DatePicker("Date of Birth", selection: $viewModel.dateOfBirth, displayedComponents: .date)
+                    DatePicker("Дата рождения", selection: $viewModel.dateOfBirth, displayedComponents: .date)
                         .datePickerStyle(.compact)
                         .accentColor(.black)
                         .font(.headline)
+                        .environment(\.locale,Locale.init(identifier: "ru"))
                 }
                 .padding(.horizontal)
                 
-                VStack(alignment: .center) {
-                    Text("Primary Goal")
+                VStack(alignment: .center,spacing: 10) {
+                    Text("Основная цель")
                         .font(.headline)
                         .foregroundColor(.black)
                     
@@ -83,8 +84,8 @@ struct ProfilePopUpView: View {
                 }
                 .padding(.horizontal)
                 
-                VStack(alignment: .leading, spacing: 10) {
-                    Text("Fitness Level")
+                VStack(alignment: .center, spacing: 10) {
+                    Text("Уровень подготовки")
                         .font(.headline)
                         .foregroundColor(.black)
                     
@@ -100,7 +101,7 @@ struct ProfilePopUpView: View {
                 .padding(.horizontal)
                 
                 Button(action: saveHealthData) {
-                    Text("Update Health Data")
+                    Text("Сохранить Данные о здоровье")
                         .frame(maxWidth: .infinity)
                         .frame(height: 50)
                         .background(Color.black)

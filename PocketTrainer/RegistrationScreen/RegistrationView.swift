@@ -18,7 +18,7 @@ struct RegistrationView: View {
                     Spacer()
                     HStack {
                         NavigationLink(destination: JoinUsView()) {
-                            Text("Join Us")
+                            Text("Регистрация")
                             .frame(width: 130,height: 60)
                             .background(.white)
                             .foregroundColor(.black)
@@ -26,7 +26,7 @@ struct RegistrationView: View {
                             .padding()
                         }
                         NavigationLink(destination: SignInView()) {
-                            Text("Sign In")
+                            Text("Войти")
                             .frame(width: 130,height: 60)
                             .foregroundColor(.white)
                             .background(

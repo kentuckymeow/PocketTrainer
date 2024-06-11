@@ -13,14 +13,14 @@ struct ProfileView: View {
     var body: some View {
             ScrollView {
                 VStack(spacing: 20) {
-                    Text("Health Data")
+                    Text("Данные о здоровье")
                         .font(.largeTitle)
                         .fontWeight(.bold)
                         .foregroundColor(.black)
                         .padding(.top)
 
                     VStack(alignment: .leading, spacing: 10) {
-                        Text("Choose your gender")
+                        Text("Выберите свой пол")
                             .font(.headline)
                             .foregroundColor(.black)
 
@@ -35,7 +35,7 @@ struct ProfileView: View {
                     .padding(.horizontal)
                     
                     VStack(alignment: .leading, spacing: 10) {
-                        Text("Write your weight in kg")
+                        Text("Напишите свой рост в кг")
                             .font(.headline)
                             .foregroundColor(.black)
                         
@@ -47,7 +47,7 @@ struct ProfileView: View {
                     .padding(.horizontal)
                     
                     VStack(alignment: .leading, spacing: 10) {
-                        Text("Write your height in cm")
+                        Text("Напишите свой рост в см")
                             .font(.headline)
                             .foregroundColor(.black)
                         
@@ -59,15 +59,16 @@ struct ProfileView: View {
                     .padding(.horizontal)
                     
                     VStack(alignment: .center) {
-                        DatePicker("Date of Birth", selection: $viewModel.dateOfBirth, displayedComponents: .date)
+                        DatePicker("Дата рождения", selection: $viewModel.dateOfBirth, displayedComponents: .date)
                             .font(.headline)
                             .datePickerStyle(.compact)
                             .accentColor(.black)
+                            .environment(\.locale,Locale.init(identifier: "ru"))
                     }
                     .padding(.horizontal)
 
-                    VStack(alignment: .center) {
-                        Text("Primary Goal")
+                    VStack(alignment: .center, spacing: 10) {
+                        Text("Основная цель")
                             .font(.headline)
                             .foregroundColor(.black)
                         
@@ -82,8 +83,8 @@ struct ProfileView: View {
                     }
                     .padding(.horizontal)
                     
-                    VStack(alignment: .leading, spacing: 10) {
-                        Text("Fitness Level")
+                    VStack(alignment: .center, spacing: 10) {
+                        Text("Уровень подготовки")
                             .font(.headline)
                             .foregroundColor(.black)
                         
@@ -99,7 +100,7 @@ struct ProfileView: View {
                     .padding(.horizontal)
                     
                     Button(action: updateHealthData) {
-                        Text("Update Health Data")
+                        Text("Обновить Данные о здоровье")
                             .frame(maxWidth: .infinity)
                             .frame(height: 50)
                             .background(Color.black)

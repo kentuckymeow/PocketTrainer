@@ -18,16 +18,16 @@ struct MealsView: View {
                             HStack() {
                                 VStack(alignment:.leading) {
                                     Text(meals.name)
-                                        .font(.caption)
+                                        .font(.callout)
                                         .fontWeight(.bold)
                                         .padding(.leading)
-                                    Text("kkal\(meals.kkal)")
+                                    Text("ккал: \(meals.kkal)")
                                         .font(.caption2)
-                                        .fontWeight(.bold)
+                                        .fontWeight(.medium)
                                         .padding(.leading)
-                                    Text("PFC:\(meals.proteins)/\(meals.fats)/\(meals.carbs)")
+                                    Text("БЖУ: \(meals.proteins)/\(meals.fats)/\(meals.carbs)")
                                         .font(.caption2)
-                                        .fontWeight(.bold)
+                                        .fontWeight(.medium)
                                         .padding(.leading)
                                 }
                                 Spacer()

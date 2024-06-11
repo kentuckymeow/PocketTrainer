@@ -30,7 +30,7 @@ struct FavouriteWorkoutsView: View {
                                 .font(.caption)
                                 .fontWeight(.bold)
                                 .foregroundColor(.white)
-                            Text("Duration: \(workout.duration)")
+                            Text("Продолжительность: \(workout.duration)")
                                 .font(.caption2)
                                 .fontWeight(.bold)
                                 .foregroundColor(.white)

@@ -10,7 +10,7 @@ import SwiftUI
 struct ExerciseView: View {
     @State var currentTab: Int = 0
     @Namespace var namespace
-    var navigationItems: [String] = ["Workout selection", "Favourite workouts"]
+    var navigationItems: [String] = ["Выбор тренировки", "Любимые тренировки"]
     @StateObject var viewModel = TrainingViewModel()
 
     var body: some View {

@@ -21,12 +21,14 @@ struct AchievementsView: View {
                             .frame(width: 50 ,height: 50)
                         Text(viewModel.achievements[index].name)
                             .foregroundColor(viewModel.achievements[index].isUnlocked ? .black : .gray)
+                            .multilineTextAlignment(.center)
                     
                         if viewModel.achievements[index].isUnlocked, let date = viewModel.achievements[index].dateOfCollect {
                             Text(date, style: .date)
                                 .font(.caption)
                                 .fontWeight(.ultraLight)
                                 .foregroundColor(.primary)
+                                .environment(\.locale,Locale.init(identifier: "ru"))
                         }
                     }
                 }
@@ -34,6 +36,7 @@ struct AchievementsView: View {
             Spacer()
         }
     }
+    
 }
 
 #Preview {

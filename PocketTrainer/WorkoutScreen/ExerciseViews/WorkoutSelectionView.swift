@@ -30,7 +30,7 @@ struct WorkoutSelectionView: View {
                                     .font(.caption)
                                     .fontWeight(.bold)
                                     .foregroundColor(.white)
-                                Text("Duration: \(training.duration)")
+                                Text("Продолжительность: \(training.duration)")
                                     .font(.caption2)
                                     .fontWeight(.bold)
                                     .foregroundColor(.white)

@@ -17,6 +17,7 @@ struct Goal: Identifiable {
     
     var dateString: String {
         let formatter = DateFormatter()
+        formatter.locale = Locale(identifier: "ru_RU") // Устанавливаем русскую локаль
         formatter.dateStyle = .medium
         return formatter.string(from: date)
     }

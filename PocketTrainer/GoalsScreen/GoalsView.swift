@@ -16,7 +16,7 @@ struct GoalsView: View {
     
     var dateFormatter: DateFormatter {
         let formatter = DateFormatter()
-        formatter.dateStyle = .medium
+        formatter.dateFormat = "dd.MM.yyyy"
         return formatter
     }
     
@@ -29,8 +29,8 @@ struct GoalsView: View {
                     editingGoalId = nil
                     showingPopup = true
                 }) {
-                    Text("Add")
-                        .frame(width: 80,height: 40)
+                    Text("Добавить")
+                        .frame(width: 100,height: 40)
                         .foregroundColor(.white)
                         .buttonStyle(.borderedProminent)
                         .background(.black)
@@ -43,11 +43,12 @@ struct GoalsView: View {
                     Spacer()
                     VStack(alignment: .leading) {
                         Text(goal.name)
-                        Text("\(goal.weight)kg")
-                        Text("\(goal.reps) reps")
-                        Text("\(goal.sets) sets")
+                        Text("\(goal.weight)кг")
+                        Text("\(goal.reps) повторений")
+                        Text("\(goal.sets) подходов")
                         Text(dateFormatter.string(from: goal.date))
                             .fontWeight(.bold)
+                            .environment(\.locale,Locale(identifier: "ru_RU"))
                     }
                     .padding()
                     .frame(width: 370,height: 140, alignment: .leading)
@@ -67,23 +68,24 @@ struct GoalsView: View {
     .toolbar(.hidden, for: .tabBar)
         .sheet(isPresented: $showingPopup) {
             VStack {
-                Text("Write your Goals")
+                Text("Напиши свои цели")
                     .font(.title)
                     .padding()
-                TextField("Name", text: $goal.name)
+                TextField("Название", text: $goal.name)
                     .textFieldStyle(.roundedBorder)
                     .padding()
-                TextField("Weight", text: $goal.weight)
+                TextField("Вес", text: $goal.weight)
                     .textFieldStyle(.roundedBorder)
                     .padding()
-                TextField("Reps", text: $goal.reps)
+                TextField("Повторений", text: $goal.reps)
                     .textFieldStyle(.roundedBorder)
                     .padding()
-                TextField("Sets", text: $goal.sets)
+                TextField("Подходов", text: $goal.sets)
                     .textFieldStyle(.roundedBorder)
                     .padding()
-                DatePicker("Date", selection: $goal.date, displayedComponents: .date)
+                DatePicker("Дата", selection: $goal.date, displayedComponents: .date)
                     .datePickerStyle(.automatic)
+                    .environment(\.locale, Locale(identifier: "ru_RU"))
                     .padding()
                 HStack {
                     Button(action: {
@@ -97,8 +99,8 @@ struct GoalsView: View {
                         editingGoalId = nil
                         showingPopup = false
                     }) {
-                        Text("Save")
-                            .frame(width: 80,height: 40)
+                        Text("Сохранить")
+                            .frame(width: 100,height: 40)
                             .foregroundColor(.white)
                             .buttonStyle(.borderedProminent)
                             .background(.black)
@@ -114,8 +116,8 @@ struct GoalsView: View {
                             editingGoalId = nil
                             showingPopup = false
                         }) {
-                            Text("Delete")
-                                .frame(width: 80,height: 40)
+                            Text("Удалить")
+                                .frame(width: 100,height: 40)
                                 .foregroundColor(.white)
                                 .buttonStyle(.borderedProminent)
                                 .background(.red)
@@ -126,6 +128,7 @@ struct GoalsView: View {
                 .padding()
             }
         }
+        .environment(\.locale, Locale(identifier: "ru_RU"))
     }
 }
 

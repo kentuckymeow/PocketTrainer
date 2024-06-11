@@ -19,16 +19,16 @@ struct SelectedPlanMealView: View {
                         HStack() {
                             VStack(alignment:.leading) {
                                 Text(meals.name)
-                                    .font(.caption)
+                                    .font(.callout)
                                     .fontWeight(.bold)
                                     .padding(.leading)
-                                Text("kkal\(meals.kkal)")
+                                Text("ккал: \(meals.kkal)")
                                     .font(.caption2)
-                                    .fontWeight(.bold)
+                                    .fontWeight(.medium)
                                     .padding(.leading)
-                                Text("PFC:\(meals.proteins)/\(meals.fats)/\(meals.carbs)")
+                                Text("БЖУ: \(meals.proteins)/\(meals.fats)/\(meals.carbs)")
                                     .font(.caption2)
-                                    .fontWeight(.bold)
+                                    .fontWeight(.medium)
                                     .padding(.leading)
                             }
                             Spacer()
@@ -51,7 +51,7 @@ struct SelectedPlanMealView: View {
 }
 
 #Preview {
-    SelectedPlanMealView(planMeals: PlanMeals(name: "Pump Up", kkal: "2300", imageName: "pumpUp", meals: [
+    SelectedPlanMealView(planMeals: PlanMeals(name: "Набрать мышечную массу", kkal: "2300", imageName: "pumpUp", meals: [
         Meals(name: "Orange oatmeal with fruit", imageName: "oatmeal", kkal: "501", proteins: "9.90", fats: "19.20", carbs: "72.20", recipe: ""),
         Meals(name: "Hot dog with chicken boiled pork", imageName: "hotdog", kkal: "735", proteins: "51.20", fats: "26.50", carbs: "72.80", recipe: "")]))
 }
