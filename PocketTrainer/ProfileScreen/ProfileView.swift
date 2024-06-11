@@ -214,7 +214,7 @@ struct ProfileView: View {
                     
                     switch error {
                     case .serverError(let string),
-                            .unkown(let string),
+                            .unknown(let string),
                             .decodingError(let string):
                         print("Failed to update health data: \(string)")
                     }

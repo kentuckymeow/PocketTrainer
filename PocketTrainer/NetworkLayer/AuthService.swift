@@ -9,7 +9,7 @@ import Foundation
 
 enum ServiceError: Error {
     case serverError(String)
-    case unkown(String = "An unknown error occured.")
+    case unknown(String = "An unknown error occured.")
     case decodingError(String = "Error parsing server response.")
 }
 
@@ -24,7 +24,7 @@ class AuthService {
                     let httpResponse = response as? HTTPURLResponse,
                     let fields = httpResponse.allHeaderFields as? [String: String]
                 else {
-                    completion(.failure(ServiceError.unkown()))
+                    completion(.failure(ServiceError.unknown()))
                     return
                 }
 
@@ -64,7 +64,7 @@ class AuthService {
                         
                     default:
                         // Other errors
-                        completion(.failure(ServiceError.unkown("Other error: \(httpResponse.statusCode), Description: \(error?.localizedDescription ?? "Unknown error")")))
+                        completion(.failure(ServiceError.unknown("Other error: \(httpResponse.statusCode), Description: \(error?.localizedDescription ?? "Unknown error")")))
                 }
 
             }

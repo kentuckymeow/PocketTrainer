@@ -17,6 +17,5 @@ struct CustomTextFieldStyle: TextFieldStyle {
                     .stroke(Color.black)
             )
     }
-    
-    
 }
+

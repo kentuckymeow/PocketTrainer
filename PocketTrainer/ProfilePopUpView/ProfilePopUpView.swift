@@ -143,7 +143,7 @@ struct ProfilePopUpView: View {
                     
                     switch error {
                     case .serverError(let string),
-                            .unkown(let string),
+                            .unknown(let string),
                             .decodingError(let string):
                         print("Failed to save health data: \(string)")
                         self.isProfilePopUpViewShown = false

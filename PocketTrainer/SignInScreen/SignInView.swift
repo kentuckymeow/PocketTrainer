@@ -11,14 +11,29 @@ struct SignInView: View {
     @ObservedObject var viewModel = SignInViewModel()
     @ObservedObject var alertManager = AlertManager()
     @State private var isActive = false
+    @State private var showPassword = false
+    @State private var showRepeatPassword = false
     @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
 
     var body: some View {
         VStack(spacing: 30) {
             TextField("Электронная почта", text: $viewModel.email)
                 .textFieldStyle(CustomTextFieldStyle())
-            TextField("Пароль", text: $viewModel.password)
-                .textFieldStyle(CustomTextFieldStyle())
+            ZStack(alignment:.trailing) {
+                if showPassword {
+                    TextField("Пароль", text: $viewModel.password)
+                } else {
+                    SecureField("Пароль", text: $viewModel.password)
+                }
+                Button(action: {
+                    showPassword.toggle()
+                }) {
+                    Image(systemName: showPassword ? "eye.slash" : "eye")
+                        .foregroundColor(.gray)
+                        .padding(.trailing,16)
+                }
+            }
+            .textFieldStyle(CustomTextFieldStyle())
             
             NavigationLink(destination: ContentView(viewModel: HealthDataViewModel()), isActive: $isActive) {
                 Button {
@@ -91,7 +106,7 @@ struct SignInView: View {
                     
                     switch error {
                     case .serverError(let string),
-                            .unkown(let string),
+                            .unknown(let string),
                             .decodingError(let string):
                         alertManager.showSignInErrorAlert(with: string)
                     }

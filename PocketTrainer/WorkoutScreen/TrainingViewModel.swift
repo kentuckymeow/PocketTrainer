@@ -46,7 +46,7 @@ class TrainingViewModel: ObservableObject {
                         guard let error = error as? ServiceError else { return }
                         switch error {
                         case .serverError(let string),
-                                .unkown(let string),
+                                .unknown(let string),
                                 .decodingError(let string):
                             print("Failed to fetch training data: \(string)")
                         }

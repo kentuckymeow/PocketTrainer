@@ -17,7 +17,7 @@ class DataService {
                 if let error = error {
                     completion(.failure(ServiceError.serverError(error.localizedDescription)))
                 } else {
-                    completion(.failure(ServiceError.unkown()))
+                    completion(.failure(ServiceError.unknown()))
                 }
                 return
             }
