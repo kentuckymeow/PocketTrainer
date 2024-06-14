@@ -9,6 +9,11 @@ import SwiftUI
 
 @main
 struct PocketTrainerApp: App {
+    init() {
+            // Устанавливаем русскую локаль для всего приложения
+            UserDefaults.standard.set(["ru_RU"], forKey: "AppleLanguages")
+            UserDefaults.standard.synchronize()
+        }
     var body: some Scene {
         WindowGroup {
             RegistrationView()
