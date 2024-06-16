@@ -27,7 +27,7 @@ struct ProfilePopUpView: View {
                     
                     Picker("Gender", selection: $viewModel.gender) {
                         ForEach(Gender.allCases, id: \.self) { gender in
-                            Text(gender.rawValue).tag(gender)
+                            Text(gender.localized).tag(gender)
                                 .foregroundColor(.black)
                         }
                     }
@@ -48,7 +48,7 @@ struct ProfilePopUpView: View {
                 .padding(.horizontal)
                 
                 VStack(alignment: .leading, spacing: 10) {
-                    Text("Напишите саой рост в см")
+                    Text("Напишите свой рост в см")
                         .font(.headline)
                         .foregroundColor(.black)
                     
@@ -64,18 +64,18 @@ struct ProfilePopUpView: View {
                         .datePickerStyle(.compact)
                         .accentColor(.black)
                         .font(.headline)
-                        .environment(\.locale,Locale.init(identifier: "ru"))
+                        .environment(\.locale, Locale.init(identifier: "ru"))
                 }
                 .padding(.horizontal)
                 
-                VStack(alignment: .center,spacing: 10) {
+                VStack(alignment: .center, spacing: 10) {
                     Text("Основная цель")
                         .font(.headline)
                         .foregroundColor(.black)
                     
                     Picker("Primary Goal", selection: $viewModel.primaryGoal) {
                         ForEach(PrimaryGoal.allCases, id: \.self) { goal in
-                            Text(goal.rawValue).tag(goal)
+                            Text(goal.localized).tag(goal)
                                 .foregroundColor(.black)
                         }
                     }
@@ -91,7 +91,7 @@ struct ProfilePopUpView: View {
                     
                     Picker("Fitness Level", selection: $viewModel.fitnessLevel) {
                         ForEach(FitnessLevel.allCases, id: \.self) { level in
-                            Text(level.rawValue).tag(level)
+                            Text(level.localized).tag(level)
                                 .foregroundColor(.black)
                         }
                     }
@@ -153,7 +153,6 @@ struct ProfilePopUpView: View {
         }
     }
 }
-
 
 #Preview {
     ProfilePopUpView(viewModel: HealthDataViewModel(), isProfilePopUpViewShown: .constant(false))

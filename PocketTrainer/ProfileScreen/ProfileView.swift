@@ -11,116 +11,115 @@ struct ProfileView: View {
     @ObservedObject var viewModel: HealthDataViewModel
 
     var body: some View {
-            ScrollView {
-                VStack(spacing: 20) {
-                    Text("Данные о здоровье")
-                        .font(.largeTitle)
-                        .fontWeight(.bold)
+        ScrollView {
+            VStack(spacing: 20) {
+                Text("Данные о здоровье")
+                    .font(.largeTitle)
+                    .fontWeight(.bold)
+                    .foregroundColor(.black)
+                    .padding(.top)
+
+                VStack(alignment: .leading, spacing: 10) {
+                    Text("Выберите свой пол")
+                        .font(.headline)
                         .foregroundColor(.black)
-                        .padding(.top)
 
-                    VStack(alignment: .leading, spacing: 10) {
-                        Text("Выберите свой пол")
-                            .font(.headline)
-                            .foregroundColor(.black)
-
-                        Picker("Gender", selection: $viewModel.gender) {
-                            ForEach(Gender.allCases, id: \.self) { gender in
-                                Text(gender.rawValue).tag(gender)
-                                    .foregroundColor(.black)
-                            }
+                    Picker("Gender", selection: $viewModel.gender) {
+                        ForEach(Gender.allCases, id: \.self) { gender in
+                            Text(gender.localized).tag(gender)
+                                .foregroundColor(.black)
                         }
-                        .pickerStyle(SegmentedPickerStyle())
                     }
-                    .padding(.horizontal)
-                    
-                    VStack(alignment: .leading, spacing: 10) {
-                        Text("Напишите свой рост в кг")
-                            .font(.headline)
-                            .foregroundColor(.black)
-                        
-                        TextField("Weight", value: $viewModel.weight, formatter: NumberFormatter())
-                            .textFieldStyle(RoundedBorderTextFieldStyle())
-                            .keyboardType(.decimalPad)
-                            .foregroundColor(.black)
-                    }
-                    .padding(.horizontal)
-                    
-                    VStack(alignment: .leading, spacing: 10) {
-                        Text("Напишите свой рост в см")
-                            .font(.headline)
-                            .foregroundColor(.black)
-                        
-                        TextField("Height", value: $viewModel.height, formatter: NumberFormatter())
-                            .textFieldStyle(RoundedBorderTextFieldStyle())
-                            .keyboardType(.decimalPad)
-                            .foregroundColor(.black)
-                    }
-                    .padding(.horizontal)
-                    
-                    VStack(alignment: .center) {
-                        DatePicker("Дата рождения", selection: $viewModel.dateOfBirth, displayedComponents: .date)
-                            .font(.headline)
-                            .datePickerStyle(.compact)
-                            .accentColor(.black)
-                            .environment(\.locale,Locale.init(identifier: "ru"))
-                    }
-                    .padding(.horizontal)
-
-                    VStack(alignment: .center, spacing: 10) {
-                        Text("Основная цель")
-                            .font(.headline)
-                            .foregroundColor(.black)
-                        
-                        Picker("Primary Goal", selection: $viewModel.primaryGoal) {
-                            ForEach(PrimaryGoal.allCases, id: \.self) { goal in
-                                Text(goal.rawValue).tag(goal)
-                                    .foregroundColor(.black)
-                            }
-                        }
-                        .pickerStyle(MenuPickerStyle())
-                        .accentColor(.secondary)
-                    }
-                    .padding(.horizontal)
-                    
-                    VStack(alignment: .center, spacing: 10) {
-                        Text("Уровень подготовки")
-                            .font(.headline)
-                            .foregroundColor(.black)
-                        
-                        Picker("Fitness Level", selection: $viewModel.fitnessLevel) {
-                            ForEach(FitnessLevel.allCases, id: \.self) { level in
-                                Text(level.rawValue).tag(level)
-                                    .foregroundColor(.black)
-                            }
-                        }
-                        .pickerStyle(MenuPickerStyle())
-                        .accentColor(.secondary)
-                    }
-                    .padding(.horizontal)
-                    
-                    Button(action: updateHealthData) {
-                        Text("Обновить Данные о здоровье")
-                            .frame(maxWidth: .infinity)
-                            .frame(height: 50)
-                            .background(Color.black)
-                            .foregroundColor(.white)
-                            .cornerRadius(10)
-                    }
-                    .padding(.horizontal)
+                    .pickerStyle(SegmentedPickerStyle())
                 }
-                .padding()
-                .background(Color.white)
-                .cornerRadius(15)
-                .shadow(color: Color.black.opacity(0.2), radius: 10, x: 0, y: 5)
-                .padding()
+                .padding(.horizontal)
+                
+                VStack(alignment: .leading, spacing: 10) {
+                    Text("Напишите свой вес в кг")
+                        .font(.headline)
+                        .foregroundColor(.black)
+                    
+                    TextField("Weight", value: $viewModel.weight, formatter: NumberFormatter())
+                        .textFieldStyle(RoundedBorderTextFieldStyle())
+                        .keyboardType(.decimalPad)
+                        .foregroundColor(.black)
+                }
+                .padding(.horizontal)
+                
+                VStack(alignment: .leading, spacing: 10) {
+                    Text("Напишите свой рост в см")
+                        .font(.headline)
+                        .foregroundColor(.black)
+                    
+                    TextField("Height", value: $viewModel.height, formatter: NumberFormatter())
+                        .textFieldStyle(RoundedBorderTextFieldStyle())
+                        .keyboardType(.decimalPad)
+                        .foregroundColor(.black)
+                }
+                .padding(.horizontal)
+                
+                VStack(alignment: .center) {
+                    DatePicker("Дата рождения", selection: $viewModel.dateOfBirth, displayedComponents: .date)
+                        .font(.headline)
+                        .datePickerStyle(.compact)
+                        .accentColor(.black)
+                        .environment(\.locale,Locale.init(identifier: "ru"))
+                }
+                .padding(.horizontal)
+
+                VStack(alignment: .center, spacing: 10) {
+                    Text("Основная цель")
+                        .font(.headline)
+                        .foregroundColor(.black)
+                    
+                    Picker("Primary Goal", selection: $viewModel.primaryGoal) {
+                        ForEach(PrimaryGoal.allCases, id: \.self) { goal in
+                            Text(goal.localized).tag(goal)
+                                .foregroundColor(.black)
+                        }
+                    }
+                    .pickerStyle(MenuPickerStyle())
+                    .accentColor(.secondary)
+                }
+                .padding(.horizontal)
+                
+                VStack(alignment: .center, spacing: 10) {
+                    Text("Уровень подготовки")
+                        .font(.headline)
+                        .foregroundColor(.black)
+                    
+                    Picker("Fitness Level", selection: $viewModel.fitnessLevel) {
+                        ForEach(FitnessLevel.allCases, id: \.self) { level in
+                            Text(level.localized).tag(level)
+                                .foregroundColor(.black)
+                        }
+                    }
+                    .pickerStyle(MenuPickerStyle())
+                    .accentColor(.secondary)
+                }
+                .padding(.horizontal)
+                
+                Button(action: updateHealthData) {
+                    Text("Обновить Данные о здоровье")
+                        .frame(maxWidth: .infinity)
+                        .frame(height: 50)
+                        .background(Color.black)
+                        .foregroundColor(.white)
+                        .cornerRadius(10)
+                }
+                .padding(.horizontal)
             }
-            .background(Color(.systemGray6).edgesIgnoringSafeArea(.all))
-            .onAppear(perform: loadHealthData)
-            .toolbar(.hidden,for: .tabBar)
+            .padding()
+            .background(Color.white)
+            .cornerRadius(15)
+            .shadow(color: Color.black.opacity(0.2), radius: 10, x: 0, y: 5)
+            .padding()
         }
-        
-    
+        .background(Color(.systemGray6).edgesIgnoringSafeArea(.all))
+        .onAppear(perform: loadHealthData)
+        .toolbar(.hidden,for: .tabBar)
+    }
+
     func loadHealthData() {
         var savedHealthData: HealthDataModel?
         if let savedData = UserDefaults.standard.data(forKey: "HealthData") {
@@ -190,7 +189,6 @@ struct ProfileView: View {
     }
 
     
-        
     func updateHealthData() {
         let userRequest = HealthDataModel(
             gender: viewModel.gender,
@@ -222,7 +220,6 @@ struct ProfileView: View {
             }
         }
     }
-
 }
 
 #Preview {

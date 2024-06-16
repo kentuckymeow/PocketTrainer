@@ -34,7 +34,7 @@ struct SelectedPlanMealView: View {
                             Spacer()
                             Image(meals.imageName)
                                 .frame(width:145,height: 150)
-                                .scaledToFill()
+                                .scaledToFit()
                                 .padding(.trailing)
                         }
                         .overlay(RoundedRectangle(cornerRadius: 25).stroke(Color.black, lineWidth: 2))
