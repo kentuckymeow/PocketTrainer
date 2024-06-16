@@ -45,6 +45,7 @@ struct RegistrationView: View {
             }
             .padding()
        }
+       .navigationBarBackButtonHidden(true)
     }
 }
 
